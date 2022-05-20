@@ -22,8 +22,7 @@ public class SongsManager : MonoBehaviour
     //     songsManager.Add(PositionNote.Up, transform.GetChild(0).GetComponent<SongManager>());
     //     songsManager.Add(PositionNote.Down, transform.GetChild(1).GetComponent<SongManager>());
     //     songsManager.Add(PositionNote.Left, transform.GetChild(2).GetComponent<SongManager>());
-    //     songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());
-        
+    //     songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());   
     // }
     void Start() {
         // audioSource.Stop();
