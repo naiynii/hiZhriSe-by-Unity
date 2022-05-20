@@ -9,19 +9,20 @@ using System;
 
 public class SongManager : MonoBehaviour
 {
-    public static SongManager Instance;
-    public AudioSource audioSource;
-    public Lane[] lanes;
-    public float songDelayInSeconds;
+    // public static SongManager Instance;
+    // public AudioSource audioSource;
+    public Lane lane;
+    // public float songDelayInSeconds;
     public double marginOfError; // in seconds
 
     public int inputDelayInMilliseconds;
     
-
-    public string fileLocation;
+    // public string fileLocation;
     public float noteTime;
     public float noteSpawnY;
+    public float noteSpawnX;
     public float noteTapY;
+    public float noteTapX;
     public float noteDespawnY
     {
         get
@@ -29,38 +30,46 @@ public class SongManager : MonoBehaviour
             return noteTapY - (noteSpawnY - noteTapY);
         }
     }
+    public float noteDespawnX
+    {
+        get
+        {
+            return noteTapX - (noteSpawnX - noteTapX);
+        }
+    }
 
-    public static MidiFile midiFile;
+    public MidiFile midiFile;
     // Start is called before the first frame update
-    void Start()
-    {
-        Instance = this;
-        ReadFromFile();
-    }
+    // void Start()
+    // {
+    //     ReadFromFile();
+    // }
 
-    private void ReadFromFile()
-    {
-        midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation);
-        GetDataFromMidi();
-    }
-    public void GetDataFromMidi()
-    {
-        var notes = midiFile.GetNotes();
-        var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
-        notes.CopyTo(array, 0);
+    // private void ReadFromFile()
+    // {
+    //     midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation);
+    //     // GetDataFromMidi();
 
-        foreach (var lane in lanes) lane.SetTimeStamps(array);
+    //     Invoke(nameof(GetDataFromMidi), 1.0f);
+    // }
+    // public void GetDataFromMidi()
+    // {
+    //     var notes = midiFile.GetNotes();
+    //     var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
+    //     notes.CopyTo(array, 0);
 
-        Invoke(nameof(StartSong), songDelayInSeconds);
-    }
-    public void StartSong()
-    {
-        audioSource.Play();
-    }
-    public static double GetAudioSourceTime()
-    {
-        return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
-    }
+    //     lane.SetTimeStamps(array);
+
+    //     // Invoke(nameof(StartSong), songDelayInSeconds);
+    // }
+    // public void StartSong()
+    // {
+    //     audioSource.Play();
+    // }
+    // public double GetAudioSourceTime()
+    // {
+    //     return (double)audioSource.timeSamples / audioSource.clip.frequency;
+    // }
 
     void Update()
     {

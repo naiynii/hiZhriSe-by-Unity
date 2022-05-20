@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
+    public PositionNote positionNote;
     double timeInstantiated;
     public float assignedTime;
+    public bool x, y;
+
     void Start()
     {
-        timeInstantiated = SongManager.GetAudioSourceTime();
+        timeInstantiated = SongsManager.Instance.GetAudioSourceTime();
     }
 
     // Update is called once per frame
     void Update()
     {
-        double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (SongManager.Instance.noteTime * 2));
+        double timeSinceInstantiated = SongsManager.Instance.GetAudioSourceTime() - timeInstantiated;
+        float t = (float)(timeSinceInstantiated / (SongsManager.Instance.songsManager[positionNote].noteTime * 2));
 
-        
+
         if (t > 1)
         {
             Destroy(gameObject);
         }
         else
         {
-            transform.localPosition = Vector3.Lerp(Vector3.up * SongManager.Instance.noteSpawnY, Vector3.up * SongManager.Instance.noteDespawnY, t); 
-            GetComponent<SpriteRenderer>().enabled = true;
+            if (y)
+            {
+                transform.localPosition = Vector3.Lerp(Vector3.up * SongsManager.Instance.songsManager[positionNote].noteSpawnY, Vector3.up * SongsManager.Instance.songsManager[positionNote].noteDespawnY, t);
+                GetComponent<SpriteRenderer>().enabled = true;
+            }
+            if (x)
+            {
+                transform.localPosition = Vector3.Lerp(Vector3.right * SongsManager.Instance.songsManager[positionNote].noteSpawnX, Vector3.right * SongsManager.Instance.songsManager[positionNote].noteDespawnX, t);
+                GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
+
     }
 }

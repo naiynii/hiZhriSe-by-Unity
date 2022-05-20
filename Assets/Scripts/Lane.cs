@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
+    public PositionNote positionNote;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject notePrefab;
@@ -26,7 +27,7 @@ public class Lane : MonoBehaviour
         {
             if (note.NoteName == noteRestriction)
             {
-                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongManager.midiFile.GetTempoMap());
+                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongsManager.midiFile.GetTempoMap());
                 timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }
         }
@@ -36,11 +37,12 @@ public class Lane : MonoBehaviour
     {
         if (spawnIndex < timeStamps.Count)
         {
-            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.Instance.noteTime)
+            if (SongsManager.Instance.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongsManager.Instance.songsManager[positionNote].noteTime)
             {
                 var note = Instantiate(notePrefab, transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
+                note.GetComponent<Note>().positionNote = positionNote;
                 spawnIndex++;
             }
         }
@@ -48,8 +50,8 @@ public class Lane : MonoBehaviour
         if (inputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[inputIndex];
-            double marginOfError = SongManager.Instance.marginOfError;
-            double audioTime = SongManager.GetAudioSourceTime() - (SongManager.Instance.inputDelayInMilliseconds / 1000.0);
+            double marginOfError = SongsManager.Instance.songsManager[positionNote].marginOfError;
+            double audioTime = SongsManager.Instance.GetAudioSourceTime() - (SongsManager.Instance.songsManager[positionNote].inputDelayInMilliseconds / 1000.0);
 
             if (Input.GetKeyDown(input))
             {
