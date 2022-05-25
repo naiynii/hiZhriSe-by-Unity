@@ -15,7 +15,7 @@ public class BGScroll : MonoBehaviour
     void Update()
     {
         transform.Translate(translation:Vector3.down * speed * Time.deltaTime);
-        if (transform.position.y < -15.38f)
+        if (transform.position.y < -15.50f)
         {
             transform.position = StartPosition;
         }
