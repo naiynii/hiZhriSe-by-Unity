@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 2
-  noteRestriction: 3
+  noteRestriction: 2
   input: 276
   notePrefab: {fileID: 5805958356765802217, guid: d2543cb544c5a2f43a52a09113f1700f, type: 3}
   timeStamps: []
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 0
-  noteRestriction: 10
+  noteRestriction: 6
   input: 273
   notePrefab: {fileID: 949527207523006638, guid: 195bbca4e0083204084d34246cf67a9e, type: 3}
   timeStamps: []
@@ -755,7 +755,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 169b32fbfd3c8c145ae6f8f25c4c8434, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d5a9e35f5c124214c9ad63a4f07dc20e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 1
-  noteRestriction: 7
+  noteRestriction: 0
   input: 274
   notePrefab: {fileID: 5526086799944176960, guid: 31789ee51a61cc249947f736e2f760cf, type: 3}
   timeStamps: []
@@ -1759,7 +1759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 3
-  noteRestriction: 8
+  noteRestriction: 5
   input: 275
   notePrefab: {fileID: 2949761833030092001, guid: b248052d5af1dc649af10a269fd7478c, type: 3}
   timeStamps: []
@@ -2651,7 +2651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23597cb1179639d4197f075c291051f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileLocation: a1.1.mid
+  fileLocation: a1.2.mid
   audioSource: {fileID: 310983716}
   songDelayInSeconds: 0
 --- !u!1 &1944331132
@@ -2880,4 +2880,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798054549aad4cc4d97c658968d023ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 5
