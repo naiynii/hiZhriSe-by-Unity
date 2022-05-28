@@ -64,7 +64,9 @@ public class Lane : MonoBehaviour
                 }
                 else
                 {
+                    Air();
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    print($"Combo has been clear");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
@@ -83,5 +85,9 @@ public class Lane : MonoBehaviour
     private void Miss()
     {
         ScoreManager.Miss();
+    }
+    private void Air()
+    {
+        ScoreManager.Air();
     }
 }

@@ -30,6 +30,10 @@ public class ScoreManager : MonoBehaviour
         comboScore = 0;
         Instance.missSFX.Play();    
     }
+    public static void Air()
+    {
+        comboScore = 0;
+    }
     private void Update()
     {
         scoreText.text = totalScore.ToString();

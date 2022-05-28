@@ -24,7 +24,7 @@ public class SongsManager : MonoBehaviour
     //     songsManager.Add(PositionNote.Left, transform.GetChild(2).GetComponent<SongManager>());
     //     songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());   
     // }
-    void Start() {
+    void Start() {  
         // audioSource.Stop();
         Instance = this;
         songsManager.Add(PositionNote.Up, transform.GetChild(0).GetComponent<SongManager>());

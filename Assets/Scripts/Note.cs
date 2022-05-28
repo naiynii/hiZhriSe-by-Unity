@@ -20,7 +20,6 @@ public class Note : MonoBehaviour
         double timeSinceInstantiated = SongsManager.Instance.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongsManager.Instance.songsManager[positionNote].noteTime * 2));
 
-
         if (t > 1)
         {
             Destroy(gameObject);
@@ -38,6 +37,5 @@ public class Note : MonoBehaviour
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-
     }
 }

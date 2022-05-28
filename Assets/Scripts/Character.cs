@@ -27,13 +27,13 @@ public class Character : MonoBehaviour
         {
             anim.SetTrigger("right");
         }
-        // if (Input.GetKey(KeyCode.RightArrow))
+        // if (Input.GetKey(KeyCode.UpArrow))
         // {
-        //     anim.SetTrigger("right");
+        //     anim.SetTrigger("up");
         // }
-        // if (Input.GetKey(KeyCode.RightArrow))
+        // if (Input.GetKey(KeyCode.DownArrow))
         // {
-        //     anim.SetTrigger("right");
+        //     anim.SetTrigger("down");
         // }
     }
 }
