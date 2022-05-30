@@ -38,4 +38,12 @@ public class Note : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("You've got hitted by Notes");
+        }
+    }
 }

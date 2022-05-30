@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 2
-  noteRestriction: 10
+  noteRestriction: 6
   input: 276
   notePrefab: {fileID: 5805958356765802217, guid: d2543cb544c5a2f43a52a09113f1700f, type: 3}
   timeStamps: []
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 0
-  noteRestriction: 2
+  noteRestriction: 7
   input: 273
   notePrefab: {fileID: 949527207523006638, guid: 195bbca4e0083204084d34246cf67a9e, type: 3}
   timeStamps: []
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 1
-  noteRestriction: 5
+  noteRestriction: 2
   input: 274
   notePrefab: {fileID: 5526086799944176960, guid: 31789ee51a61cc249947f736e2f760cf, type: 3}
   timeStamps: []
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 227553577}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 6
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 885724009}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 0
@@ -1759,7 +1759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 3
-  noteRestriction: 0
+  noteRestriction: 4
   input: 275
   notePrefab: {fileID: 2949761833030092001, guid: b248052d5af1dc649af10a269fd7478c, type: 3}
   timeStamps: []
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 61911278}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 0
@@ -1959,9 +1959,10 @@ GameObject:
   - component: {fileID: 975483083}
   - component: {fileID: 975483082}
   - component: {fileID: 975483085}
+  - component: {fileID: 975483086}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2065,6 +2066,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0e10ddbf5ea02a4a8ebbd11b30d1cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &975483086
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975483081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15, y: 15}
+    newSize: {x: 15, y: 15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6, y: 6}
+  m_EdgeRadius: 0
 --- !u!1 &1016062882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +2204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 363343160}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: -6
@@ -2651,7 +2678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23597cb1179639d4197f075c291051f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileLocation: a1.2q.mid
+  fileLocation: a1.2.mid
   audioSource: {fileID: 310983716}
   songDelayInSeconds: 0
 --- !u!1 &1944331132

@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 227553577}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 6
@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 885724009}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 0
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 61911278}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 0
@@ -2204,7 +2204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 363343160}
-  marginOfError: 0.08
+  marginOfError: 0.077
   inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: -6

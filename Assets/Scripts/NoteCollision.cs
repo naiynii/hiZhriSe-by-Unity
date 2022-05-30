@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class NoteCollision : MonoBehaviour
@@ -8,7 +7,6 @@ public class NoteCollision : MonoBehaviour
         if (other.collider.tag == "Player")
         {
             Destroy(this.gameObject);
-            Destroy(other.gameObject);
             Debug.Log("You've got hitted by Notes");
         }
     }
