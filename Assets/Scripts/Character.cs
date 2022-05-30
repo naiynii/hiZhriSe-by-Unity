@@ -21,19 +21,19 @@ public class Character : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            anim.SetTrigger("left");
+            anim.SetTrigger("lefting");
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            anim.SetTrigger("right");
+            anim.SetTrigger("righting");
         }
         // if (Input.GetKey(KeyCode.UpArrow))
         // {
-        //     anim.SetTrigger("up");
+        //     anim.SetTrigger("upping");
         // }
         // if (Input.GetKey(KeyCode.DownArrow))
         // {
-        //     anim.SetTrigger("down");
+        //     anim.SetTrigger("downing");
         // }
     }
 }

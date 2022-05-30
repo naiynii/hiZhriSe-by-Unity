@@ -43,7 +43,7 @@ public class Note : MonoBehaviour
         if (col.tag == "Player")
         {
             Destroy(this.gameObject);
-            Debug.Log("You've got hitted by Notes");
+            // print($"You were hit with a note");
         }
     }
 }

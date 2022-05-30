@@ -57,37 +57,56 @@ public class Lane : MonoBehaviour
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
-                    Hit();
-                    print($"Hit on {inputIndex} note");
-                    Destroy(notes[inputIndex].gameObject);
-                    inputIndex++;
+                    // Hit();
+                    // print($"Hit on {inputIndex} note");
+                    // Destroy(notes[inputIndex].gameObject);
+                    // inputIndex++;
+                    if (Math.Abs(audioTime - timeStamp) <= 0.033 && Math.Abs(audioTime - timeStamp) > 0)
+                    {
+                        Perfect();
+                        print($"Perfecto!! hit on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
+                    if (Math.Abs(audioTime - timeStamp) <= 0.067 && Math.Abs(audioTime - timeStamp) > 0.033)
+                    {
+                        Nice();
+                        print($"Naisu! hit on {inputIndex} note");
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
                 }
                 else
                 {
                     Air();
-                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
-                    print($"Combo has been clear");
+                    print($"Air? hit on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    print($"Combo cleared");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
-                print($"Missed {inputIndex} note");
+                print($"Misz!? on {inputIndex} note");
                 inputIndex++;
             }
         }       
     
     }
-    private void Hit()
+    private void Perfect()
     {
-        ScoreManager.Hit();
+        ScoreManager.Perfecto();
     }
-    private void Miss()
+    private void Nice()
     {
-        ScoreManager.Miss();
+        ScoreManager.Naisu();
     }
     private void Air()
     {
         ScoreManager.Air();
     }
+    private void Miss()
+    {
+        ScoreManager.Misz();
+    }
+    
 }
