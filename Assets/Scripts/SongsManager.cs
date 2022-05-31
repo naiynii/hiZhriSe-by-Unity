@@ -6,17 +6,19 @@ using Melanchall.DryWetMidi.Interaction;
 using System.IO;
 using UnityEngine.Networking;
 using System;
+using UnityEngine.SceneManagement;
 
-public enum PositionNote {Up,Down,Left,Right}
+public enum PositionNote { Up, Down, Left, Right }
 public class SongsManager : MonoBehaviour
 {
-    
+
     public string fileLocation;
     public static MidiFile midiFile;
     public AudioSource audioSource;
     public float songDelayInSeconds;
     public Dictionary<PositionNote, SongManager> songsManager = new Dictionary<PositionNote, SongManager>();
     public static SongsManager Instance;
+
     // private void Awake() {
     //     Instance = this;
     //     songsManager.Add(PositionNote.Up, transform.GetChild(0).GetComponent<SongManager>());
@@ -24,7 +26,8 @@ public class SongsManager : MonoBehaviour
     //     songsManager.Add(PositionNote.Left, transform.GetChild(2).GetComponent<SongManager>());
     //     songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());   
     // }
-    void Start() {  
+    void Start()
+    {
         // audioSource.Stop();
         Instance = this;
         songsManager.Add(PositionNote.Up, transform.GetChild(0).GetComponent<SongManager>());
@@ -61,6 +64,4 @@ public class SongsManager : MonoBehaviour
     {
         audioSource.Play();
     }
-    
-
 }

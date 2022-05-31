@@ -9,12 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 4fb89678806ac404b8453efe5e55a3bc
   - enabled: 1
-    path: Assets/Scenes/Character.unity
-    guid: e61f3fd2969c1584f8c16b602674163f
+    path: Assets/Scenes/Dialog 1.1.unity
+    guid: ddf9deacc116d0541b6e3c9984955ff4
   - enabled: 1
-    path: Assets/Scenes/Chapter.unity
-    guid: a806c85327d77304fb8241520d1e161e
-  - enabled: 1
-    path: Assets/Scenes/Story Mode/Chapter 1.0.unity
+    path: Assets/Scenes/Chapter 1.0.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Chapter 1.1.unity
+    guid: cdd5161b954cb1d4da2a9ad6e9cbd807
+  - enabled: 1
+    path: Assets/Scenes/Chapter 1.2.unity
+    guid: 35ad474dc4c3453498561da7d3d3d484
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: cdb9992026cbf6c458d12feea6db8603
+  - enabled: 1
+    path: Assets/Scenes/Results.unity
+    guid: 0505481e2b779ab4da3b4c69af0a5296
   m_configObjects: {}

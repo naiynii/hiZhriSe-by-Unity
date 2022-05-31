@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public TMPro.TextMeshPro lifeText;
     static int totalScore;
     static int comboScore;
-    static int lifeScore;
+    public static int lifeScore;
     
     void Start()
     {

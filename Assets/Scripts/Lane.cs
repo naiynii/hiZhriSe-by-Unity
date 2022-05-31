@@ -64,14 +64,14 @@ public class Lane : MonoBehaviour
                     if (Math.Abs(audioTime - timeStamp) <= 0.033 && Math.Abs(audioTime - timeStamp) > 0)
                     {
                         Perfect();
-                        print($"Perfecto!! hit on {inputIndex} note");
+                        print($"Perfecto!! hit on note {inputIndex}");
                         Destroy(notes[inputIndex].gameObject);
                         inputIndex++;
                     }
                     if (Math.Abs(audioTime - timeStamp) <= 0.067 && Math.Abs(audioTime - timeStamp) > 0.033)
                     {
                         Nice();
-                        print($"Naisu! hit on {inputIndex} note");
+                        print($"Naisu! hit on note {inputIndex}");
                         Destroy(notes[inputIndex].gameObject);
                         inputIndex++;
                     }
@@ -79,14 +79,14 @@ public class Lane : MonoBehaviour
                 else
                 {
                     Air();
-                    print($"Air? hit on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    print($"Air? hit on note {inputIndex} with {Math.Abs(audioTime - timeStamp)} delay");
                     print($"Combo cleared");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
-                print($"Misz!? on {inputIndex} note");
+                print($"Misz!? on note {inputIndex}");
                 inputIndex++;
             }
         }       
