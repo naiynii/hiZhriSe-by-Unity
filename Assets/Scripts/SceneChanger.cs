@@ -46,8 +46,6 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Dialog 1.3");
     }
-
-    // Update is called once per frame
     public void QuitGame()
     {
         Debug.Log("QUIT!!");
