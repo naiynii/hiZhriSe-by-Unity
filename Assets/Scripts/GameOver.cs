@@ -8,10 +8,6 @@ public class GameOver : MonoBehaviour
     public GameObject gameOver;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,4 +23,21 @@ public class GameOver : MonoBehaviour
             AudioListener.pause = true;
         }
     }
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        PauseMenu.GameIsPause = false;
+        AudioListener.pause = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneChanger.MainMenu();
+    }
+    public void QuitGame()
+    {
+        SceneChanger.QuitGame();
+    }
+
 }

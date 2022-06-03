@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
 
     public static bool GameIsPause = false;
-    public GameObject pauseMenuUI;
+    public GameObject pauseMenu;
 
-    void Update() 
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -25,35 +25,37 @@ public class Timer : MonoBehaviour
     }
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPause = true;
         AudioListener.pause = true;
     }
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameIsPause = false;
         AudioListener.pause = false;
     }
-    public void Restart()
+    public static void Restart()
     {
         Time.timeScale = 1f;
+        GameIsPause = false;
+        AudioListener.pause = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void LoadMenu()
+    public static void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main");
+        GameIsPause = false;
+        SceneChanger.MainMenu();
     }
-    public void QuitGame()
+    public static void QuitGame()
     {
-        Debug.Log("QUIT!!");
-        Application.Quit();
+        GameIsPause = false;
+        SceneChanger.QuitGame();
     }
     
-
     // AudioClip audioClip;
 
     // Start is called before the first frame update

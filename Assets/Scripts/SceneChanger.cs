@@ -6,13 +6,15 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     // Start is called before the first frame update
-    public void MainMenu()
+    public int Character;
+    public static void MainMenu()
     {
         SceneManager.LoadScene("Main");
     }
     public void ChapterMyxxe()
     {
         SceneManager.LoadScene("Myxxe Chapter");
+        Character = 1;
     }
     public void Story1_0()
     {
@@ -46,7 +48,7 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Dialog 1.3");
     }
-    public void QuitGame()
+    public static void QuitGame()
     {
         Debug.Log("QUIT!!");
         Application.Quit();

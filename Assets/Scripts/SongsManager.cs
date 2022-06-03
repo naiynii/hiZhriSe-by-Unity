@@ -18,7 +18,8 @@ public class SongsManager : MonoBehaviour
     public float songDelayInSeconds;
     public Dictionary<PositionNote, SongManager> songsManager = new Dictionary<PositionNote, SongManager>();
     public static SongsManager Instance;
-    public float delay;
+    public static float delay;
+    public static string songName;
 
     // private void Awake() {
     //     Instance = this;
@@ -37,12 +38,26 @@ public class SongsManager : MonoBehaviour
         songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());
         ReadFromFile();
         delay = audioSource.clip.length;
+        songName = System.IO.Path.GetDirectoryName(audioSource.clip.ToString());
         print("The song is " + delay + " seconds long");
-        StartCoroutine(Win(delay));
+        // StartCoroutine(Win(delay));
     }
+    // IEnumerator Win(float delay)
+    // {
+    //     yield return new WaitForSeconds(delay);
+    //     Result.result.SetActive(true);
+    //     SceneManager.LoadScene("Results");
+    // }
     void Update()
     {
-        // Lose();
+        // if (delay > 0)
+        // {
+        //     delay -= Time.deltaTime;
+        // }
+        // else
+        // {
+        //     ResultZ();
+        // }
     }
     private void ReadFromFile()
     {
@@ -71,21 +86,5 @@ public class SongsManager : MonoBehaviour
     public void StartSong()
     {
         audioSource.Play();
-    }
-    IEnumerator Win(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("Results");
-    }
-    public void Lose()
-    {
-        // if (SongsManager.Instance.audioSource.clip == audioClip)
-        // {
-        //     SceneManager.LoadScene("Results");
-        // }
-        if (ScoreManager.lifeScore <= 0)
-        {
-            SceneManager.LoadScene("Game Over");
-        }
     }
 }

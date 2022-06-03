@@ -8,11 +8,10 @@ public class Lane : MonoBehaviour
 {
     public PositionNote positionNote;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
-    public KeyCode input;
+    public KeyCode input1, input2;
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
-
     int spawnIndex = 0;
     int inputIndex = 0;
 
@@ -53,7 +52,7 @@ public class Lane : MonoBehaviour
             double marginOfError = SongsManager.Instance.songsManager[positionNote].marginOfError;
             double audioTime = SongsManager.Instance.GetAudioSourceTime() - (SongsManager.Instance.songsManager[positionNote].inputDelayInMilliseconds / 1000.0);
 
-            if (Input.GetKeyDown(input))
+            if (Input.GetKeyDown(input1) || Input.GetKeyDown(input2))
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
@@ -64,14 +63,14 @@ public class Lane : MonoBehaviour
                     if (Math.Abs(audioTime - timeStamp) <= 0.033 && Math.Abs(audioTime - timeStamp) > 0)
                     {
                         Perfect();
-                        print($"Perfecto!! hit on note {inputIndex}");
+                        print($"Perfecto hit!! on note {inputIndex}, +2 HP");
                         Destroy(notes[inputIndex].gameObject);
                         inputIndex++;
                     }
                     if (Math.Abs(audioTime - timeStamp) <= 0.067 && Math.Abs(audioTime - timeStamp) > 0.033)
                     {
                         Nice();
-                        print($"Naisu! hit on note {inputIndex}");
+                        print($"Naisu hit! on note {inputIndex}, +1 HP");
                         Destroy(notes[inputIndex].gameObject);
                         inputIndex++;
                     }
@@ -79,14 +78,13 @@ public class Lane : MonoBehaviour
                 else
                 {
                     Air();
-                    print($"Air? hit on note {inputIndex} with {Math.Abs(audioTime - timeStamp)} delay");
-                    print($"Combo cleared");
+                    print($"Air hit? on note {inputIndex} with {Math.Abs(audioTime - timeStamp)} delay, Combo cleared, -1 HP");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
-                print($"Misz!? on note {inputIndex}");
+                print($"Misz!? on note {inputIndex}, -3 HP");
                 inputIndex++;
             }
         }       
