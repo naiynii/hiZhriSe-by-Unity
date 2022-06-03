@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     static float accRate = 0f;
     public static float accRateRounded;
     public static float perf, nais, airr, mizs, allHit, allNote;
+    int[] maxCombo = {};
 
     void Start()
     {
@@ -97,5 +98,9 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = totalScore.ToString();
         comboText.text = comboScore.ToString();
         lifeText.text = lifeScore.ToString();
+    }
+    void addToMaxCombo(int value)
+    {
+        
     }
 }

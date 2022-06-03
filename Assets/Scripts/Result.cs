@@ -56,15 +56,11 @@ public class Result : MonoBehaviour
 
             songName.text = SongsManager.songName;
             finalRank.text = ScoreManager.rankResult;
-            hitRate.text = ScoreManager.accRateRounded + "%";
+            hitRate.text = ScoreManager.accRateRounded.ToString();
 
             scoreMax = ScoreManager.totalScore;
             maxScore.text = scoreMax.ToString();
-            // maxScore.text = "" + ScoreManager.totalScore;
-
-            // comboMax = ScoreManager.comboScore;
-            // maxCombo.text = comboMax.ToString();
-            // maxCombo.text = "" + ScoreManager.comboScore;
+            
             allPerfecto = ScoreManager.perf;
             countPerfecto.text = allPerfecto.ToString();
             allNaisu = ScoreManager.nais;
