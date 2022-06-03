@@ -66,7 +66,8 @@ public class Result : MonoBehaviour
             isEnd = true;
 
             Debug.Log("Hit count: " + ScoreManager.allHit);
-            Debug.Log("Miss count: " + ScoreManager.allNote);
+            Debug.Log("Miss count: " + ScoreManager.mizs);
+            Debug.Log("Hit streak: " + comboMax);
             Debug.Log("Accuracy: " + ScoreManager.accRate2 + " %");
         }
     }

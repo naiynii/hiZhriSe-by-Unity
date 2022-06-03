@@ -19,6 +19,11 @@ public class GameOver : MonoBehaviour
             Time.timeScale = 0f;
             AudioListener.pause = true;
         }
+        else if (PauseMenu.GameIsPause == true)
+        {
+            Time.timeScale = 0f;
+            AudioListener.pause = true;
+        }
         else
         {
             Time.timeScale = 1f;
@@ -27,15 +32,18 @@ public class GameOver : MonoBehaviour
     }
     public void Restart()
     {
-        PauseMenu.Restart();
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void LoadMenu()
     {
-        PauseMenu.LoadMenu();
+        Time.timeScale = 1f;
+        SceneChanger.MainMenu();
     }
     public void QuitGame()
     {
-        PauseMenu.QuitGame();
+        SceneChanger.QuitGame();
     }
 
 }

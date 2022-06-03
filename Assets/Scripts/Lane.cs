@@ -73,7 +73,7 @@ public class Lane : MonoBehaviour
                 else
                 {
                     Air();
-                    print($"Air hit? on note {inputIndex} with {Math.Abs(audioTime - timeStamp)} delay, Combo cleared, -1 HP");
+                    print($"Air hit? on note {inputIndex} with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 10000f) / 10000f)} delay, Combo cleared, -1 HP");
                     // {(float)Math.Round((audioTime - timeStamp) * 10000f) / 10000f}
                 }
             }
