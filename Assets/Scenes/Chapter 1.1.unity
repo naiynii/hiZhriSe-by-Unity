@@ -2960,8 +2960,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 108009740}
-  marginOfError: 0.077
-  inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 6
   noteSpawnX: 0
@@ -3461,8 +3459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 334102641}
-  marginOfError: 0.077
-  inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 0
   noteSpawnX: 6
@@ -4401,8 +4397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 1425594684}
-  marginOfError: 0.077
-  inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: 0
   noteSpawnX: -6
@@ -4916,8 +4910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 2124263034}
-  marginOfError: 0.077
-  inputDelayInMilliseconds: 0
   noteTime: 1
   noteSpawnY: -6
   noteSpawnX: 0
@@ -8321,7 +8313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileLocation: a1.1.mid
   audioSource: {fileID: 310983716}
-  songDelayInSeconds: 0
 --- !u!1 &1944331132
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,11 +14,6 @@ public class Lane : MonoBehaviour
     public List<double> timeStamps = new List<double>();
     int spawnIndex = 0, inputIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
         foreach (var note in array)
@@ -44,37 +39,32 @@ public class Lane : MonoBehaviour
                 spawnIndex++;
             }
         }
-
         if (inputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[inputIndex];
-            double marginOfError = SongsManager.Instance.songsManager[positionNote].marginOfError;
-            double audioTime = SongsManager.Instance.GetAudioSourceTime() - (SongsManager.Instance.songsManager[positionNote].inputDelayInMilliseconds / 1000.0);
+            double marginOfError = 0.067;
+            double audioTime = SongsManager.Instance.GetAudioSourceTime();
 
             if (Input.GetKeyDown(input1) || Input.GetKeyDown(input2))
             {
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                if (Math.Abs(audioTime - timeStamp) <= (marginOfError / 2) && Math.Abs(audioTime - timeStamp) >= 0)
                 {
-                    if (Math.Abs(audioTime - timeStamp) <= 0.033 && Math.Abs(audioTime - timeStamp) > 0)
-                    {
-                        Perfect();
-                        print($"Perfecto hit!! on note {inputIndex}, +2 HP");
-                        Destroy(notes[inputIndex].gameObject);
-                        inputIndex++;
-                    }
-                    if (Math.Abs(audioTime - timeStamp) <= 0.067 && Math.Abs(audioTime - timeStamp) > 0.033)
-                    {
-                        Nice();
-                        print($"Naisu hit! on note {inputIndex}, +1 HP");
-                        Destroy(notes[inputIndex].gameObject);
-                        inputIndex++;
-                    }
+                    Perfect();
+                    print($"Perfecto hit!! on note {inputIndex}, +2 HP");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;
+                }
+                else if (Math.Abs(audioTime - timeStamp) <= marginOfError && Math.Abs(audioTime - timeStamp) > (marginOfError / 2))
+                {
+                    Nice();
+                    print($"Naisu hit! on note {inputIndex}, +1 HP");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;
                 }
                 else
                 {
                     Air();
-                    print($"Air hit? on note {inputIndex} with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 10000f) / 10000f)} delay, Combo cleared, -1 HP");
-                    // {(float)Math.Round((audioTime - timeStamp) * 10000f) / 10000f}
+                    print($"Air hit? on note {inputIndex} with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} delay, Combo cleared, -1 HP");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
@@ -83,7 +73,7 @@ public class Lane : MonoBehaviour
                 print($"Misz!? on note {inputIndex}, -3 HP");
                 inputIndex++;
             }
-        }       
+        }
     }
     private void Perfect()
     {
@@ -101,5 +91,5 @@ public class Lane : MonoBehaviour
     {
         ScoreManager.Misz();
     }
-    
+
 }

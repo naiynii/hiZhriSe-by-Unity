@@ -11,13 +11,10 @@ public class SongManager : MonoBehaviour
 {
     // public static SongManager Instance;
     // public AudioSource audioSource;
-    public Lane lane;
     // public float songDelayInSeconds;
-    public double marginOfError; // in seconds
-
-    public int inputDelayInMilliseconds;
-    
+    // public double marginOfError; // in seconds
     // public string fileLocation;
+    public Lane lane;
     public float noteTime;
     public float noteSpawnY;
     public float noteSpawnX;
@@ -25,8 +22,8 @@ public class SongManager : MonoBehaviour
     public float noteTapX;
     public float noteDespawnY { get { return noteTapY - (noteSpawnY - noteTapY); } }
     public float noteDespawnX { get { return noteTapX - (noteSpawnX - noteTapX); } }
-
     public MidiFile midiFile;
+    
     // Start is called before the first frame update
     // void Start()
     // {

@@ -23,37 +23,34 @@ public class Result : MonoBehaviour
         allAir = PlayerPrefs.GetFloat("allAir", allAir);
         allMisz = PlayerPrefs.GetFloat("allMisz", allMisz);
     }
-
     // Update is called once per frame
     void Update()
     {
         if (ScoreManager.comboScore >= comboMax)
         {
             comboMax = ScoreManager.comboScore;
-            maxCombo.text = comboMax.ToString();
             PlayerPrefs.SetInt("comboMax", comboMax);
         }
         if (isEnd == true)
         {
             return;
         }
-        if (SongsManager.delay > 0)
+        if (SongsManager.songsDuration > 0)
         {
-            SongsManager.delay -= Time.deltaTime;
+            SongsManager.songsDuration -= Time.deltaTime;
         }
-        else if (SongsManager.delay <= 0)
+        else if (SongsManager.songsDuration <= 0)
         {
             resultScene.SetActive(true);
             Time.timeScale = 0f;
             Rate();
 
-            songName.text = SongsManager.nameOfSong;
+            songName.text = SongsManager.songsName;
             finalRank.text = ScoreManager.rankResult;
             hitRate.text = ScoreManager.accRate2.ToString();
-
             scoreMax = ScoreManager.totalScore;
             maxScore.text = scoreMax.ToString();
-
+            maxCombo.text = comboMax.ToString();
             allPerfecto = ScoreManager.perf;
             countPerfecto.text = allPerfecto.ToString();
             allNaisu = ScoreManager.nais;
@@ -65,7 +62,7 @@ public class Result : MonoBehaviour
 
             isEnd = true;
 
-            Debug.Log("Hit count: " + ScoreManager.allHit);
+            Debug.Log("Hit count: " + ScoreManager.allHit + "(Perfecto!!(" + ScoreManager.perf + "), Naisu!(" + ScoreManager.nais + ")");
             Debug.Log("Miss count: " + ScoreManager.mizs);
             Debug.Log("Hit streak: " + comboMax);
             Debug.Log("Accuracy: " + ScoreManager.accRate2 + " %");

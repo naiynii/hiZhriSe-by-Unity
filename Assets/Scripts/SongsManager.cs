@@ -14,11 +14,11 @@ public class SongsManager : MonoBehaviour
     public string fileLocation;
     public static MidiFile midiFile;
     public AudioSource audioSource;
-    public float songDelayInSeconds;
+    // public float songDelayInSeconds;
     public Dictionary<PositionNote, SongManager> songsManager = new Dictionary<PositionNote, SongManager>();
     public static SongsManager Instance;
-    public static float delay;
-    public static string songName, nameOfSong;
+    public static float songsDuration;
+    public static string songsName;
 
     // private void Awake() {
     //     Instance = this;
@@ -36,15 +36,10 @@ public class SongsManager : MonoBehaviour
         songsManager.Add(PositionNote.Left, transform.GetChild(2).GetComponent<SongManager>());
         songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());
         ReadFromFile();
-        delay = audioSource.clip.length;
-        songName = audioSource.clip.ToString();
-        nameOfSong = songName.Replace(" (UnityEngine.AudioClip)", "");
-        print("Now playing: " + nameOfSong);
-        print("The song is " + delay + " seconds long");
-    }
-    void Update()
-    {
-        
+        songsDuration = (float)Math.Round(audioSource.clip.length * 1000f) / 1000f;
+        songsName = audioSource.clip.ToString().Replace(" (UnityEngine.AudioClip)", "");
+        print("Now playing: " + songsName);
+        print("Song duration: " + songsDuration + " seconds");
     }
     private void ReadFromFile()
     {
@@ -64,7 +59,8 @@ public class SongsManager : MonoBehaviour
             songManager.Value.lane.SetTimeStamps(array);
         }
 
-        Invoke(nameof(StartSong), songDelayInSeconds);
+        StartSong();
+        // Invoke(nameof(StartSong), songDelayInSeconds);
     }
     public double GetAudioSourceTime()
     {
