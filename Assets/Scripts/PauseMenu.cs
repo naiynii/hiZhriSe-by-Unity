@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
     public static bool GameIsPause = false;
     public GameObject pauseMenu;
 
@@ -13,14 +12,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPause)
-            {
-                Resume();
-            } 
-            else
-            {
-                Pause();
-            }
+            if (GameIsPause) { Resume(); } 
+            else { Pause(); }
         }
     }
     void Pause()
@@ -55,49 +48,4 @@ public class PauseMenu : MonoBehaviour
         GameIsPause = false;
         SceneChanger.QuitGame();
     }
-    
-    // AudioClip audioClip;
-
-    // Start is called before the first frame update
-
-    // void Start()
-    // {
-    //     songsManager = GetComponent<SongsManager>();
-    //     SongsManager.Instance.audioSource =  SongsManager.Instance.GetComponent<AudioSource>();
-    //     audioClip = SongsManager.Instance.audioSource.clip;
-    //     print("The song is " + SongsManager.Instance.audioSource.clip.length + " seconds long");
-        
-    // }
-
-    // Update is called once per frame
-
-    // void Update()
-    // {
-    //     WinLose();
-
-    //     // if (Input.GetKey(KeyCode.Escape))
-    //     // {
-    //     //     Pause();
-    //     // }
-        
-    // }
-
-    // public void WinLose()
-    // {
-    //     if (SongsManager.Instance.audioSource.clip == audioClip)
-    //     {
-    //         SceneManager.LoadScene("Results");
-    //     }
-    //     if (ScoreManager.lifeScore <= 0)
-    //     {
-    //         SceneManager.LoadScene("Game Over");
-    //     }
-    // }
-    // public void Pause()
-    // {
-    //     if (SongsManager.Instance.audioSource.clip == audioClip)
-    //     {
-    //         SceneManager.LoadScene("Results");
-    //     }
-    // }
 }

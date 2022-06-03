@@ -59,18 +59,9 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            if (scene.name == "Dialog 1.1")
-            {
-                SceneManager.LoadScene("Chapter 1.1");
-            }
-            if (scene.name == "Dialog 1.2")
-            {
-                SceneManager.LoadScene("Chapter 1.2");
-            }
-            if (scene.name == "Dialog 1.3")
-            {
-                SceneManager.LoadScene("Chapter 1.3");
-            }
+            if (scene.name == "Dialog 1.1") { SceneManager.LoadScene("Chapter 1.1"); }
+            if (scene.name == "Dialog 1.2") { SceneManager.LoadScene("Chapter 1.2"); }
+            if (scene.name == "Dialog 1.3") { SceneManager.LoadScene("Chapter 1.3"); }
             // gameObject.SetActive(false);
         }
     }

@@ -11,7 +11,6 @@ using UnityEngine.SceneManagement;
 public enum PositionNote { Up, Down, Left, Right }
 public class SongsManager : MonoBehaviour
 {
-
     public string fileLocation;
     public static MidiFile midiFile;
     public AudioSource audioSource;
@@ -19,7 +18,7 @@ public class SongsManager : MonoBehaviour
     public Dictionary<PositionNote, SongManager> songsManager = new Dictionary<PositionNote, SongManager>();
     public static SongsManager Instance;
     public static float delay;
-    public static string songName;
+    public static string songName, nameOfSong;
 
     // private void Awake() {
     //     Instance = this;
@@ -38,26 +37,14 @@ public class SongsManager : MonoBehaviour
         songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());
         ReadFromFile();
         delay = audioSource.clip.length;
-        songName = System.IO.Path.GetDirectoryName(audioSource.clip.ToString());
+        songName = audioSource.clip.ToString();
+        nameOfSong = songName.Replace(" (UnityEngine.AudioClip)", "");
+        print("Now playing: " + nameOfSong);
         print("The song is " + delay + " seconds long");
-        // StartCoroutine(Win(delay));
     }
-    // IEnumerator Win(float delay)
-    // {
-    //     yield return new WaitForSeconds(delay);
-    //     Result.result.SetActive(true);
-    //     SceneManager.LoadScene("Results");
-    // }
     void Update()
     {
-        // if (delay > 0)
-        // {
-        //     delay -= Time.deltaTime;
-        // }
-        // else
-        // {
-        //     ResultZ();
-        // }
+        
     }
     private void ReadFromFile()
     {

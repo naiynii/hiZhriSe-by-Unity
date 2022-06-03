@@ -23,20 +23,8 @@ public class SongManager : MonoBehaviour
     public float noteSpawnX;
     public float noteTapY;
     public float noteTapX;
-    public float noteDespawnY
-    {
-        get
-        {
-            return noteTapY - (noteSpawnY - noteTapY);
-        }
-    }
-    public float noteDespawnX
-    {
-        get
-        {
-            return noteTapX - (noteSpawnX - noteTapX);
-        }
-    }
+    public float noteDespawnY { get { return noteTapY - (noteSpawnY - noteTapY); } }
+    public float noteDespawnX { get { return noteTapX - (noteSpawnX - noteTapX); } }
 
     public MidiFile midiFile;
     // Start is called before the first frame update

@@ -12,8 +12,7 @@ public class Lane : MonoBehaviour
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
-    int spawnIndex = 0;
-    int inputIndex = 0;
+    int spawnIndex = 0, inputIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -56,10 +55,6 @@ public class Lane : MonoBehaviour
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
-                    // Hit();
-                    // print($"Hit on {inputIndex} note");
-                    // Destroy(notes[inputIndex].gameObject);
-                    // inputIndex++;
                     if (Math.Abs(audioTime - timeStamp) <= 0.033 && Math.Abs(audioTime - timeStamp) > 0)
                     {
                         Perfect();
@@ -79,6 +74,7 @@ public class Lane : MonoBehaviour
                 {
                     Air();
                     print($"Air hit? on note {inputIndex} with {Math.Abs(audioTime - timeStamp)} delay, Combo cleared, -1 HP");
+                    // {(float)Math.Round((audioTime - timeStamp) * 10000f) / 10000f}
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
@@ -88,7 +84,6 @@ public class Lane : MonoBehaviour
                 inputIndex++;
             }
         }       
-    
     }
     private void Perfect()
     {

@@ -8,17 +8,13 @@ public class Result : MonoBehaviour
     public TMPro.TextMeshProUGUI songName, finalRank, hitRate;
     public TMPro.TextMeshProUGUI maxScore, maxCombo;
     public TMPro.TextMeshProUGUI countPerfecto, countNaisu, countAir, countMisz;
-    // static string nameOfSong;
     static int scoreMax, comboMax;
-    static float  allPerfecto, allNaisu, allAir, allMisz;
+    static float allPerfecto, allNaisu, allAir, allMisz;
     bool isEnd = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        // nameOfSong = SongsManager.audioSource.clip.ToString();
-        // songName.text = nameOfSong.ToString();
-
         scoreMax = PlayerPrefs.GetInt("scoreMax", scoreMax);
         comboMax = PlayerPrefs.GetInt("comboMax", comboMax);
 
@@ -26,12 +22,17 @@ public class Result : MonoBehaviour
         allNaisu = PlayerPrefs.GetFloat("allNaisu", allNaisu);
         allAir = PlayerPrefs.GetFloat("allAir", allAir);
         allMisz = PlayerPrefs.GetFloat("allMisz", allMisz);
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ScoreManager.comboScore >= comboMax)
+        {
+            comboMax = ScoreManager.comboScore;
+            maxCombo.text = comboMax.ToString();
+            PlayerPrefs.SetInt("comboMax", comboMax);
+        }
         if (isEnd == true)
         {
             return;
@@ -42,25 +43,17 @@ public class Result : MonoBehaviour
         }
         else if (SongsManager.delay <= 0)
         {
-            
             resultScene.SetActive(true);
             Time.timeScale = 0f;
             Rate();
-            
-            if (ScoreManager.comboScore >= comboMax)
-            {
-                comboMax = ScoreManager.comboScore;
-                maxCombo.text = comboMax.ToString();
-                PlayerPrefs.SetInt("comboMax", comboMax);
-            }
 
-            songName.text = SongsManager.songName;
+            songName.text = SongsManager.nameOfSong;
             finalRank.text = ScoreManager.rankResult;
-            hitRate.text = ScoreManager.accRateRounded.ToString();
+            hitRate.text = ScoreManager.accRate2.ToString();
 
             scoreMax = ScoreManager.totalScore;
             maxScore.text = scoreMax.ToString();
-            
+
             allPerfecto = ScoreManager.perf;
             countPerfecto.text = allPerfecto.ToString();
             allNaisu = ScoreManager.nais;
@@ -70,13 +63,11 @@ public class Result : MonoBehaviour
             allMisz = ScoreManager.mizs;
             countMisz.text = allMisz.ToString();
 
-            PlayerPrefs.SetInt("scoreMax", scoreMax);
-            PlayerPrefs.GetFloat("allPerfecto", allPerfecto);
-            PlayerPrefs.GetFloat("allNaisu", allNaisu);
-            PlayerPrefs.GetFloat("allAir", allAir);
-            PlayerPrefs.GetFloat("allMisz", allMisz);
-
             isEnd = true;
+
+            Debug.Log("Hit count: " + ScoreManager.allHit);
+            Debug.Log("Miss count: " + ScoreManager.allNote);
+            Debug.Log("Accuracy: " + ScoreManager.accRate2 + " %");
         }
     }
     private void Rate()

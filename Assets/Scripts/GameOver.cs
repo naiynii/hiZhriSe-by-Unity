@@ -7,9 +7,6 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOver;
 
-    // Start is called before the first frame update
-
-    // Update is called once per frame
     void Update()
     {
         Lose();
@@ -22,22 +19,23 @@ public class GameOver : MonoBehaviour
             Time.timeScale = 0f;
             AudioListener.pause = true;
         }
+        else
+        {
+            Time.timeScale = 1f;
+            AudioListener.pause = false;
+        }
     }
     public void Restart()
     {
-        Time.timeScale = 1f;
-        PauseMenu.GameIsPause = false;
-        AudioListener.pause = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PauseMenu.Restart();
     }
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
-        SceneChanger.MainMenu();
+        PauseMenu.LoadMenu();
     }
     public void QuitGame()
     {
-        SceneChanger.QuitGame();
+        PauseMenu.QuitGame();
     }
 
 }

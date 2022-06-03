@@ -13,7 +13,6 @@ public class Note : MonoBehaviour
     {
         timeInstantiated = SongsManager.Instance.GetAudioSourceTime();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -40,10 +39,6 @@ public class Note : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player")
-        {
-            Destroy(this.gameObject);
-            // print($"You were hit with a note");
-        }
+        if (col.tag == "Player") { Destroy(this.gameObject); }
     }
 }
