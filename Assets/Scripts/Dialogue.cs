@@ -33,40 +33,6 @@ public class Dialogue : MonoBehaviour
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
-
-            if (SceneManager.GetActiveScene().name == "Dialog 1.0")
-            {
-                if (textComponent.text == lines[0])
-                {
-                    pic1.SetActive(true);
-                    pic2.SetActive(false);
-                    pic3.SetActive(false);
-                }
-                if (textComponent.text == lines[9])
-                {
-                    pic1.SetActive(false);
-                    pic2.SetActive(true);
-                    pic3.SetActive(false);
-                }
-                if (textComponent.text == lines[22])
-                {
-                    pic1.SetActive(false);
-                    pic2.SetActive(false);
-                    pic3.SetActive(true);
-                }
-            }
-            if (SceneManager.GetActiveScene().name == "Dialog 1.1")
-            {
-                
-            }
-            if (SceneManager.GetActiveScene().name == "Dialog 1.2")
-            {
-                
-            }
-            if (SceneManager.GetActiveScene().name == "Dialog 1.3")
-            {
-                
-            }
         }
     }
     void StartDialogue()
@@ -92,12 +58,47 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
+
         else
         {
             if (scene.name == "Dialog 1.1") { SceneManager.LoadScene("Chapter 1.1"); }
             if (scene.name == "Dialog 1.2") { SceneManager.LoadScene("Chapter 1.2"); }
             if (scene.name == "Dialog 1.3") { SceneManager.LoadScene("Chapter 1.3"); }
             // gameObject.SetActive(false);
+        }
+
+        if (SceneManager.GetActiveScene().name == "Dialog 1.1")
+        {
+            if (textComponent.text == lines[0])
+            {
+                pic1.SetActive(true);
+                pic2.SetActive(false);
+                pic3.SetActive(false);
+            }
+            if (textComponent.text == lines[9])
+            {
+                pic1.SetActive(false);
+                pic2.SetActive(true);
+                pic3.SetActive(false);
+            }
+            if (textComponent.text == lines[22])
+            {
+                pic1.SetActive(false);
+                pic2.SetActive(false);
+                pic3.SetActive(true);
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.1")
+        {
+
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.2")
+        {
+
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.3")
+        {
+
         }
     }
 
