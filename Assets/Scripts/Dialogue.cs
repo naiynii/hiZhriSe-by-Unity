@@ -17,6 +17,7 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         StartDialogue();
+        DialogX();
     }
 
     // Update is called once per frame
@@ -39,27 +40,19 @@ public class Dialogue : MonoBehaviour
         {
             if (index >= 0 && index < 9)
             {
-                pic1.SetActive(true);
-                pic2.SetActive(false);
-                pic3.SetActive(false);
+                Dialog1();
             }
             else if (index >= 9 && index < 22)
             {
-                pic1.SetActive(false);
-                pic2.SetActive(true);
-                pic3.SetActive(false);
+                Dialog2();
             }
             else if (index >= 22 && index < 29)
             {
-                pic1.SetActive(false);
-                pic2.SetActive(false);
-                pic3.SetActive(true);
+                Dialog3();
             }
             else
             {
-                pic1.SetActive(false);
-                pic2.SetActive(false);
-                pic3.SetActive(false);
+                DialogX();
             }
         }
         if (SceneManager.GetActiveScene().name == "Dialog 1.2")
@@ -70,7 +63,7 @@ public class Dialogue : MonoBehaviour
         {
 
         }
-        
+
     }
     void StartDialogue()
     {
@@ -95,7 +88,6 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-
         else
         {
             if (scene.name == "Dialog 1.1") { SceneManager.LoadScene("Chapter 1.1"); }
@@ -103,7 +95,30 @@ public class Dialogue : MonoBehaviour
             if (scene.name == "Dialog 1.3") { SceneManager.LoadScene("Chapter 1.3"); }
             // gameObject.SetActive(false);
         }
-
+    }
+    void Dialog1()
+    {
+        pic1.SetActive(true);
+        pic2.SetActive(false);
+        pic3.SetActive(false);
+    }
+    void Dialog2()
+    {
+        pic1.SetActive(false);
+        pic2.SetActive(true);
+        pic3.SetActive(false);
+    }
+    void Dialog3()
+    {
+        pic1.SetActive(false);
+        pic2.SetActive(false);
+        pic3.SetActive(true);
+    }
+    void DialogX()
+    {
+        pic1.SetActive(false);
+        pic2.SetActive(false);
+        pic3.SetActive(false);
     }
 
 }
