@@ -370,36 +370,40 @@ MonoBehaviour:
   pic3: {fileID: 164972148}
   textComponent: {fileID: 1550210512}
   lines:
-  - 'Jimmy : Hi !!'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  - 'Riini : When I come in front of the door. I feel abnormal sense....'
-  textSpeed: 0.05
+  - ...
+  - "\u201CSound\u201D"
+  - Sound and human, They've been together since time immemorial.
+  - But if one day this world have no "sound"?
+  - "What do you think? Hmmm~~ \u201C\u2588 \u2588 \u2588s \u2588 \u2588 \u2588 \u2588\u201D"
+  - "That was a quiet conversation. \u2588 are using a sound that if you don't listen
+    carefully, definitely didn't hear."
+  - But a word that seemed to be particularly loud and clear came out.
+  - '"...up...at"'
+  - '?'
+  - ...
+  - ....
+  - .....
+  - "\u201CGet out of bed now! Do you know what time is it?!!!!!!\""
+  - He flinched unconsciously. Then he found his sister ---Mira, standing at the
+    end of the bed.
+  - 'Myxxe: What day is today? Mira-nee.'
+  - 'Mira: Monday. Dare to ask?!'
+  - "He flinched again for the second time, two flinched, double flinched. \u2014\u2014Erm,
+    it's a joke. :D"
+  - Then he got up and did a routine like the speed of light.
+  - "Mira: Sigh, really, let it be like this every time. Both waking up late\u2026."
+  - Suddenly, a scream sound came from the bathroom.
+  - 'Myxxe: AAAAAAAAAAAA!!!!!!!!!!!!! MY LITTLE FINGERRRRRRRRRRR!!!!!!!!!!!!!!!!!!!!!!!!'
+  - 'Mira: ........and clumsy.'
+  - ...
+  - ....
+  - .....
+  - "Myxxe: Sigh\u2026.finally I can come out, I have to hurry to do \"Part-time\"
+    already."
+  - He ran quickly. but did not notice a narrow alley.
+  - "???: This sense...... Ehe~ I find it. \u2606"
+  - To be continued.
+  textSpeed: 0.02
 --- !u!114 &586696388
 MonoBehaviour:
   m_ObjectHideFlags: 0
