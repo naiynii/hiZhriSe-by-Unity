@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 164972151}
   - component: {fileID: 164972150}
   m_Layer: 5
-  m_Name: pic2
+  m_Name: pic3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,12 +365,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf44255bc9fc404aaa36b1103265480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pic1: {fileID: 728123496}
+  pic2: {fileID: 1710525266}
+  pic3: {fileID: 164972148}
   textComponent: {fileID: 1550210512}
   lines:
   - 'Jimmy : Hi !!'
   - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
+  - 'Riini : When I come in front of the door. I feel abnormal sense....'
   textSpeed: 0.05
-  picNum: {fileID: 0}
 --- !u!114 &586696388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3647059}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -421,7 +450,7 @@ GameObject:
   - component: {fileID: 728123499}
   - component: {fileID: 728123498}
   m_Layer: 5
-  m_Name: pic0
+  m_Name: pic1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1005,7 +1034,7 @@ GameObject:
   - component: {fileID: 1710525269}
   - component: {fileID: 1710525268}
   m_Layer: 5
-  m_Name: pic1
+  m_Name: pic2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

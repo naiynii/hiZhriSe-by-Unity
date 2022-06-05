@@ -34,6 +34,43 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+
+        if (SceneManager.GetActiveScene().name == "Dialog 1.1")
+        {
+            if (index >= 0 && index < 9)
+            {
+                pic1.SetActive(true);
+                pic2.SetActive(false);
+                pic3.SetActive(false);
+            }
+            else if (index >= 9 && index < 22)
+            {
+                pic1.SetActive(false);
+                pic2.SetActive(true);
+                pic3.SetActive(false);
+            }
+            else if (index >= 22 && index < 29)
+            {
+                pic1.SetActive(false);
+                pic2.SetActive(false);
+                pic3.SetActive(true);
+            }
+            else
+            {
+                pic1.SetActive(false);
+                pic2.SetActive(false);
+                pic3.SetActive(false);
+            }
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.2")
+        {
+
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.3")
+        {
+
+        }
+        
     }
     void StartDialogue()
     {
@@ -67,39 +104,6 @@ public class Dialogue : MonoBehaviour
             // gameObject.SetActive(false);
         }
 
-        if (SceneManager.GetActiveScene().name == "Dialog 1.1")
-        {
-            if (textComponent.text == lines[0])
-            {
-                pic1.SetActive(true);
-                pic2.SetActive(false);
-                pic3.SetActive(false);
-            }
-            if (textComponent.text == lines[9])
-            {
-                pic1.SetActive(false);
-                pic2.SetActive(true);
-                pic3.SetActive(false);
-            }
-            if (textComponent.text == lines[22])
-            {
-                pic1.SetActive(false);
-                pic2.SetActive(false);
-                pic3.SetActive(true);
-            }
-        }
-        if (SceneManager.GetActiveScene().name == "Dialog 1.1")
-        {
-
-        }
-        if (SceneManager.GetActiveScene().name == "Dialog 1.2")
-        {
-
-        }
-        if (SceneManager.GetActiveScene().name == "Dialog 1.3")
-        {
-
-        }
     }
 
 }
