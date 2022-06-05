@@ -6,11 +6,12 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
+    public GameObject pic1, pic2, pic3;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
-
     private int index;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,40 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+            }
+
+            if (SceneManager.GetActiveScene().name == "Dialog 1.0")
+            {
+                if (textComponent.text == lines[0])
+                {
+                    pic1.SetActive(true);
+                    pic2.SetActive(false);
+                    pic3.SetActive(false);
+                }
+                if (textComponent.text == lines[9])
+                {
+                    pic1.SetActive(false);
+                    pic2.SetActive(true);
+                    pic3.SetActive(false);
+                }
+                if (textComponent.text == lines[22])
+                {
+                    pic1.SetActive(false);
+                    pic2.SetActive(false);
+                    pic3.SetActive(true);
+                }
+            }
+            if (SceneManager.GetActiveScene().name == "Dialog 1.1")
+            {
+                
+            }
+            if (SceneManager.GetActiveScene().name == "Dialog 1.2")
+            {
+                
+            }
+            if (SceneManager.GetActiveScene().name == "Dialog 1.3")
+            {
+                
             }
         }
     }
