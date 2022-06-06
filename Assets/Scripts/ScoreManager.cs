@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public AudioSource hitSFX, missSFX;
     public TMPro.TextMeshPro scoreText, comboText, lifeText;
-    public static int totalScore, comboScore, lifeScore;
+    public static int totalScore, comboScore, lifeScore, comboStreak;
     public static string rankResult = "";
     static float accRate = 0f;
     public static float accRate2;
@@ -19,8 +19,13 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
         totalScore = 0;
         comboScore = 0;
+        comboStreak = 0;
         lifeScore = 100;
         perf = 0f; nais = 0f; airr = 0f; mizs = 0f; allNote = 0f;
+    }
+    public static void Reset()
+    {
+        comboScore = 0;
     }
     public static void Perfecto()
     {
@@ -42,6 +47,7 @@ public class ScoreManager : MonoBehaviour
     }
     public static void Air()
     {
+        if(comboStreak < comboScore) { comboStreak = comboScore; }
         comboScore = 0;
         lifeScore -= 1;
         if (lifeScore <= 0) { lifeScore = 0; }
@@ -49,6 +55,7 @@ public class ScoreManager : MonoBehaviour
     }
     public static void Misz()
     {
+        if(comboStreak < comboScore) { comboStreak = comboScore; }
         comboScore = 0;
         totalScore += 0;
         lifeScore -= 3;

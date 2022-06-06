@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public int Character;
     public static void MainMenu()
     {
         SceneManager.LoadScene("Main");
     }
     public void ChapterMyxxe()
     {
-        SceneManager.LoadScene("Myxxe Chapter");
-        Character = 1;
+        SceneManager.LoadScene("Main");
+        BackToChapter.Instance.myxxeChapter.SetActive(true);
     }
     public void Story1_0()
     {

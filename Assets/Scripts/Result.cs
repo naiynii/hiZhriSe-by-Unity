@@ -26,11 +26,6 @@ public class Result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ScoreManager.comboScore >= comboMax)
-        {
-            comboMax = ScoreManager.comboScore;
-            PlayerPrefs.SetInt("comboMax", comboMax);
-        }
         if (isEnd == true)
         {
             return;
@@ -50,6 +45,9 @@ public class Result : MonoBehaviour
             hitRate.text = ScoreManager.accRate2.ToString();
             scoreMax = ScoreManager.totalScore;
             maxScore.text = scoreMax.ToString();
+            
+            comboMax = ScoreManager.comboStreak;
+            PlayerPrefs.SetInt("comboMax", comboMax);
             maxCombo.text = comboMax.ToString();
             allPerfecto = ScoreManager.perf;
             countPerfecto.text = allPerfecto.ToString();
@@ -61,11 +59,13 @@ public class Result : MonoBehaviour
             countMisz.text = allMisz.ToString();
 
             isEnd = true;
-
-            Debug.Log("Hit count: " + ScoreManager.allHit + "(Perfecto!!(" + ScoreManager.perf + "), Naisu!(" + ScoreManager.nais + ")");
+            
+            Debug.Log("All notes: "  + ScoreManager.allNote);
+            Debug.Log("Hit count: "  + ScoreManager.allHit + " (Perfecto!! " + ScoreManager.perf + ", Naisu! " + ScoreManager.nais + ")");
             Debug.Log("Miss count: " + ScoreManager.mizs);
             Debug.Log("Hit streak: " + comboMax);
-            Debug.Log("Accuracy: " + ScoreManager.accRate2 + " %");
+            Debug.Log("Accuracy: "   + ScoreManager.accRate2 + " %");
+            
         }
     }
     private void Rate()
