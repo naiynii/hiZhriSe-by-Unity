@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
     }
     public static void Air()
     {
-        if(comboStreak < comboScore) { comboStreak = comboScore; }
+        if (comboStreak < comboScore) { comboStreak = comboScore; }
         comboScore = 0;
         lifeScore -= 1;
         if (lifeScore <= 0) { lifeScore = 0; }
@@ -55,7 +55,7 @@ public class ScoreManager : MonoBehaviour
     }
     public static void Misz()
     {
-        if(comboStreak < comboScore) { comboStreak = comboScore; }
+        if (comboStreak < comboScore) { comboStreak = comboScore; }
         comboScore = 0;
         totalScore += 0;
         lifeScore -= 3;

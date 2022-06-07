@@ -11,8 +11,7 @@ public class SceneChanger : MonoBehaviour
     }
     public void ChapterMyxxe()
     {
-        SceneManager.LoadScene("Main");
-        BackToChapter.Instance.myxxeChapter.SetActive(true);
+        SceneManager.LoadScene("Myxxe Chapter");
     }
     public void Story1_0()
     {
