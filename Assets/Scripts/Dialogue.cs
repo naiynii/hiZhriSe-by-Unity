@@ -6,7 +6,7 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public GameObject pic1, pic2, pic3;
+    public GameObject pic1, pic2, pic3, pic4, pic5;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
     {
         textComponent.text = string.Empty;
         StartDialogue();
-        DialogX();
+        BgX();
     }
 
     // Update is called once per frame
@@ -40,24 +40,47 @@ public class Dialogue : MonoBehaviour
         {
             if (index >= 0 && index < 9)
             {
-                Dialog1();
+                Bg1();
             }
             else if (index >= 9 && index < 22)
             {
-                Dialog2();
+                Bg2();
             }
             else if (index >= 22 && index < 29)
             {
-                Dialog3();
+                Bg3();
             }
             else
             {
-                DialogX();
+                BgX();
             }
         }
         if (SceneManager.GetActiveScene().name == "Dialog 1.2")
         {
-
+            if (index >= 0 && index < 8)
+            {
+                Bg1();
+            }
+            else if (index >= 8 && index < 15 || index >= 18 && index < 24)
+            {
+                Bg2();
+            }
+            else if (index >= 15 && index < 18)
+            {
+                Bg3();
+            }
+            else if (index >= 24 && index < 31)
+            {
+                Bg4();
+            }
+            else if (index >= 31 && index < 38)
+            {
+                Bg4();
+            }
+            else
+            {
+                BgX();
+            }
         }
         if (SceneManager.GetActiveScene().name == "Dialog 1.3")
         {
@@ -96,29 +119,53 @@ public class Dialogue : MonoBehaviour
             // gameObject.SetActive(false);
         }
     }
-    void Dialog1()
+    void Bg1()
     {
         pic1.SetActive(true);
         pic2.SetActive(false);
         pic3.SetActive(false);
+        pic4.SetActive(false);
+        pic5.SetActive(false);
     }
-    void Dialog2()
+    void Bg2()
     {
         pic1.SetActive(false);
         pic2.SetActive(true);
         pic3.SetActive(false);
+        pic4.SetActive(false);
+        pic5.SetActive(false);
     }
-    void Dialog3()
+    void Bg3()
     {
         pic1.SetActive(false);
         pic2.SetActive(false);
         pic3.SetActive(true);
+        pic4.SetActive(false);
+        pic5.SetActive(false);
     }
-    void DialogX()
+    void Bg4()
     {
         pic1.SetActive(false);
         pic2.SetActive(false);
         pic3.SetActive(false);
+        pic4.SetActive(true);
+        pic5.SetActive(false);
+    }
+    void Bg5()
+    {
+        pic1.SetActive(false);
+        pic2.SetActive(false);
+        pic3.SetActive(false);
+        pic4.SetActive(false);
+        pic5.SetActive(true);
+    }
+    void BgX()
+    {
+        pic1.SetActive(false);
+        pic2.SetActive(false);
+        pic3.SetActive(false);
+        pic4.SetActive(false);
+        pic5.SetActive(false);
     }
 
 }
