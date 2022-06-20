@@ -26,9 +26,7 @@ public class Dialogue : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
-            {
-                NextLine();
-            }
+            { NextLine(); }
             else
             {
                 StopAllCoroutines();
@@ -38,53 +36,25 @@ public class Dialogue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Dialog 1.1")
         {
-            if (index >= 0 && index < 9)
-            {
-                Bg1();
-            }
-            else if (index >= 9 && index < 22)
-            {
-                Bg2();
-            }
-            else if (index >= 22 && index < 29)
-            {
-                Bg3();
-            }
-            else
-            {
-                BgX();
-            }
+            if (index >= 0 && index < 9) { Bg1(); }
+            else if (index >= 9 && index < 22) { Bg2(); }
+            else if (index >= 22 && index < 29) { Bg3(); }
+            else { BgX(); }
         }
         if (SceneManager.GetActiveScene().name == "Dialog 1.2")
         {
-            if (index >= 0 && index < 8)
-            {
-                Bg1();
-            }
-            else if (index >= 8 && index < 15 || index >= 18 && index < 24)
-            {
-                Bg2();
-            }
-            else if (index >= 15 && index < 18)
-            {
-                Bg3();
-            }
-            else if (index >= 24 && index < 31)
-            {
-                Bg4();
-            }
-            else if (index >= 31 && index < 38)
-            {
-                Bg4();
-            }
-            else
-            {
-                BgX();
-            }
+            if (index >= 0 && index < 8) { Bg1(); }
+            else if (index >= 8 && index < 15 || index >= 18 && index < 24) { Bg2(); }
+            else if (index >= 15 && index < 18) { Bg3(); }
+            else if (index >= 24 && index < 31) { Bg4(); }
+            else if (index >= 31 && index < 38) { Bg5(); }
+            else { BgX(); }
         }
         if (SceneManager.GetActiveScene().name == "Dialog 1.3")
         {
-
+            if (index >= 0 && index < 17 || index >= 21 && index < 31) { Bg1(); }
+            else if (index >= 17 && index < 21) { Bg2(); }
+            else { BgX(); }
         }
 
     }
