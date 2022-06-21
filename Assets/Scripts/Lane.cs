@@ -8,6 +8,7 @@ public class Lane : MonoBehaviour
 {
     public PositionNote positionNote;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
+    // public Melanchall.DryWetMidi.MusicTheory.Chord chordRestriction;
     public KeyCode input1, input2;
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
@@ -50,27 +51,27 @@ public class Lane : MonoBehaviour
                 if (Math.Abs(audioTime - timeStamp) <= (marginOfError / 2) && Math.Abs(audioTime - timeStamp) >= 0)
                 {
                     Perfect();
-                    print($"Perfecto hit!! on note {inputIndex}, +1 Combo, +2 HP");
+                    print($"Perfecto hit!! on note {inputIndex + 1}, +1 Combo, +2 HP");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
                 else if (Math.Abs(audioTime - timeStamp) <= marginOfError && Math.Abs(audioTime - timeStamp) > (marginOfError / 2))
                 {
                     Nice();
-                    print($"Naisu hit! on note {inputIndex}, +1 Combo, +1 HP");
+                    print($"Naisu hit! on note {inputIndex + 1}, +1 Combo, +1 HP");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
                 else
                 {
                     Air();
-                    print($"Air hit? on note {inputIndex} with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} delay, Combo cleared, -1 HP");
+                    print($"Air hit? on note {inputIndex + 1} with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} delay, Combo cleared, -1 HP");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
-                print($"Misz!? on note {inputIndex}, Combo cleared, -3 HP");
+                print($"Misz!? on note {inputIndex + 1}, Combo cleared, -3 HP");
                 inputIndex++;
             }
         }

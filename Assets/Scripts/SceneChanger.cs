@@ -29,10 +29,7 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Chapter 1.3");
     }
-    public void Dialog1_0()
-    {
-        SceneManager.LoadScene("Dialog 1.0");
-    }
+
     public void Dialog1_1()
     {
         SceneManager.LoadScene("Dialog 1.1");
@@ -45,6 +42,27 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Dialog 1.3");
     }
+    public void Song0()
+    {
+        SceneManager.LoadScene("Song 0");
+    }
+    public void Song1()
+    {
+        SceneManager.LoadScene("Song 1");
+    }
+    public void Song2()
+    {
+        SceneManager.LoadScene("Song 2");
+    }
+    public void Song3()
+    {
+        SceneManager.LoadScene("Song 3");
+    }
+    public void Song4()
+    {
+        SceneManager.LoadScene("Song 4");
+    }
+
     public static void QuitGame()
     {
         Debug.Log("QUIT!!");
