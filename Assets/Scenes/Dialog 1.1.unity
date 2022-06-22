@@ -276,7 +276,6 @@ GameObject:
   m_Component:
   - component: {fileID: 508280559}
   - component: {fileID: 508280560}
-  - component: {fileID: 508280561}
   m_Layer: 0
   m_Name: Dialog
   m_TagString: Untagged
@@ -310,18 +309,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 891f95ed87a9f0142a9e47fea6f849f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &508280561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 508280558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b580120962823242bc79b208e44188a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &586696385
@@ -1064,7 +1051,7 @@ PrefabInstance:
     - target: {fileID: 3851073961173507125, guid: 62c32273c11eb304f9fa6cb14dd358a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 508280561}
+      objectReference: {fileID: 0}
     - target: {fileID: 3851073961173507125, guid: 62c32273c11eb304f9fa6cb14dd358a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
