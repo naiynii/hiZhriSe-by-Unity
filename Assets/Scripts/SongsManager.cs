@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public enum PositionNote { Up, Down, Left, Right }
 public class SongsManager : MonoBehaviour
 {
-    public static string fileLocation;
+    public string fileLocation;
     public static MidiFile midiFile;
     public AudioSource audioSource;
     // public float songDelayInSeconds;

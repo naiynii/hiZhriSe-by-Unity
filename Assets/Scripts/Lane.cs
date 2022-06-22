@@ -51,7 +51,7 @@ public class Lane : MonoBehaviour
                 if (Math.Abs(audioTime - timeStamp) <= (marginOfError / 2) && Math.Abs(audioTime - timeStamp) >= 0)
                 {
                     Perfect();
-                    print($"Perfecto hit!!, +1 Combo, +2 HP");
+                    Debug.Log($"Perfecto hit!!, +1 Combo, +2 HP");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                     //  on note {inputIndex + 1}
@@ -59,20 +59,20 @@ public class Lane : MonoBehaviour
                 else if (Math.Abs(audioTime - timeStamp) <= marginOfError && Math.Abs(audioTime - timeStamp) > (marginOfError / 2))
                 {
                     Nice();
-                    print($"Naisu hit!, +1 Combo, +1 HP");
+                    Debug.Log($"Naisu hit!, +1 Combo, +1 HP");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
                 else
                 {
                     Air();
-                    print($"Air hit?, with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} seconds delay, Combo cleared, -1 HP");
+                    Debug.Log($"Air hit?, with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} seconds delay, Combo cleared, -1 HP");
                 }
             }
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
-                print($"Misz!?, Combo cleared, -3 HP");
+                Debug.Log($"Misz!?, Combo cleared, -3 HP");
                 inputIndex++;
             }
         }

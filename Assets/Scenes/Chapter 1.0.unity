@@ -2104,6 +2104,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519420032}
     m_Modifications:
+    - target: {fileID: 8742704186462995962, guid: 44624869eb1d83046b0e36ee8b96d37d, type: 3}
+      propertyPath: m_fontSize
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742704186462995962, guid: 44624869eb1d83046b0e36ee8b96d37d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8742704187103397632, guid: 44624869eb1d83046b0e36ee8b96d37d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2577,6 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23597cb1179639d4197f075c291051f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileLocation: 1.0.mid
   audioSource: {fileID: 913004097}
 --- !u!1 &1944331132
 GameObject:
