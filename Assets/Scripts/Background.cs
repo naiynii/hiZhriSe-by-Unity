@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    public float speed = 4f;
+    public static float speed = 4f;
     private Vector3 StartPosition;
     void Start()
     {

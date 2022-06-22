@@ -17,7 +17,7 @@ public class Note : MonoBehaviour
     void Update()
     {
         double timeSinceInstantiated = SongsManager.Instance.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (SongsManager.Instance.songsManager[positionNote].noteTime * 2));
+        float t = (float)(timeSinceInstantiated / (SongManager.noteTime * 2));
 
         if (t > 1)
         {

@@ -255,7 +255,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7c022004d04d95f43a36b91ea564a1b1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 91d7daf2bd9f12c4688cbc1ced7677bc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -702,8 +702,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 227553577}
+  noteTime: 1
   noteSpawnY: 6
   noteSpawnX: 0
+  noteTapY: 0
+  noteTapX: 0
 --- !u!4 &662979249
 Transform:
   m_ObjectHideFlags: 0
@@ -815,8 +818,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 885724009}
+  noteTime: 1
   noteSpawnY: 0
   noteSpawnX: 6
+  noteTapY: 0
+  noteTapX: 0
 --- !u!1 &885724008
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,8 +918,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 61911278}
+  noteTime: 1
   noteSpawnY: 0
   noteSpawnX: -6
+  noteTapY: 0
+  noteTapX: 0
 --- !u!114 &976881556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3152081236290034566, guid: d411ab7873db2864bab23e4b082b9af9, type: 3}
@@ -1099,8 +1108,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 363343160}
+  noteTime: 1
   noteSpawnY: -6
   noteSpawnX: 0
+  noteTapY: 0
+  noteTapX: 0
 --- !u!1 &1134483916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23597cb1179639d4197f075c291051f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileLocation: aTest.mid
   audioSource: {fileID: 310983716}
 --- !u!1 &1944331132
 GameObject:

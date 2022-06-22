@@ -19,8 +19,8 @@ public class Character : MonoBehaviour
 
     private void OnButtonInput()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)  || Input.GetKey(KeyCode.A)) { anim.SetTrigger("lefting"); }
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) { anim.SetTrigger("righting"); }
+        if (Input.GetKey(KeyCode.LeftArrow)  && PauseMenu.GameIsPause == false || Input.GetKey(KeyCode.A) && PauseMenu.GameIsPause == false) { anim.SetTrigger("lefting"); }
+        if (Input.GetKey(KeyCode.RightArrow) && PauseMenu.GameIsPause == false || Input.GetKey(KeyCode.D) && PauseMenu.GameIsPause == false) { anim.SetTrigger("righting"); }
         // if (Input.GetKey(KeyCode.UpArrow)   || Input.GetKey(KeyCode.W)) { anim.SetTrigger("upping"); }
         // if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) { anim.SetTrigger("downing"); }
     }

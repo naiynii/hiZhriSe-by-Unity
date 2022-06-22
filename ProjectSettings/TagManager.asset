@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Note
   - Chapter
+  - Song
   layers:
   - Default
   - TransparentFX
