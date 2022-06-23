@@ -720,6 +720,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Dialog1_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Play
       objectReference: {fileID: 0}
