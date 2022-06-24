@@ -280,17 +280,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1774172987782244642, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
   m_PrefabInstance: {fileID: 1774172987934252868}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &154187367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1774172987782244643, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
-  m_PrefabInstance: {fileID: 1774172987934252868}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 891f95ed87a9f0142a9e47fea6f849f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &201847046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 853214406148613811, guid: 35a6c72037c4d86458810eeedc0ea82b, type: 3}
@@ -1767,7 +1756,7 @@ PrefabInstance:
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 154187367}
+      objectReference: {fileID: 1774172987934252869}
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1786,7 +1775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: MainMenu
+      value: SaveOnClick
       objectReference: {fileID: 0}
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1794,7 +1783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SceneChanger, Assembly-CSharp
+      value: SaveManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1774172987740447260, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1858,6 +1847,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
+--- !u!114 &1774172987934252869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3781076071174713655, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
+  m_PrefabInstance: {fileID: 1774172987934252868}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481cf547e44643944bf6c292333aba76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3152081235939210957
 PrefabInstance:
   m_ObjectHideFlags: 0

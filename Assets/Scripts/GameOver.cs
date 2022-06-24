@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOver;
-    public AudioSource youDead;
-
     void Update()
     {
         Lose();
@@ -16,7 +14,6 @@ public class GameOver : MonoBehaviour
     {
         if (ScoreManager.lifeScore <= 0)
         {
-            youDead.Play();
             gameOver.SetActive(true);
             Time.timeScale = 0f;
             AudioListener.pause = true;
@@ -41,10 +38,12 @@ public class GameOver : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
+        AudioListener.pause = false;
         SceneChanger.MainMenu();
     }
     public void QuitGame()
     {
+        AudioListener.pause = false;
         SceneChanger.QuitGame();
     }
 

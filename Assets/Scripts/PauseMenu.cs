@@ -52,6 +52,7 @@ public class PauseMenu : MonoBehaviour
     public static void QuitGame()
     {
         GameIsPause = false;
+        AudioListener.pause = false;
         SceneChanger.QuitGame();
     }
 }
