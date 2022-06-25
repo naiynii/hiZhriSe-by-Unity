@@ -13,18 +13,22 @@ public class ChapterCounter : MonoBehaviour
         {
             chapCounter = "1-0";
         }
+
         if (SceneManager.GetActiveScene().name == "Chapter 1.1")
         {
             chapCounter = "1-1";
         }
+
         if (SceneManager.GetActiveScene().name == "Chapter 1.2")
         {
             chapCounter = "1-2";
         }
+        
         if (SceneManager.GetActiveScene().name == "Chapter 1.3")
         {
             chapCounter = "1-3";
         }
+
         chapterText.text = chapCounter.ToString();
     }
 }

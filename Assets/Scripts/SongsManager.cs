@@ -38,8 +38,7 @@ public class SongsManager : MonoBehaviour
         ReadFromFile();
         songsDuration = (float)Math.Round(audioSource.clip.length * 1000f) / 1000f;
         songsName = audioSource.clip.ToString().Replace(" (UnityEngine.AudioClip)", "");
-        print("Now playing: " + songsName);
-        print("Song duration: " + songsDuration + " seconds");
+        Debug.Log("Now playing: " + songsName + "; Song duration: " + songsDuration + " seconds");
     }
     private void ReadFromFile()
     {
