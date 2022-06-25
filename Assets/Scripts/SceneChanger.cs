@@ -29,7 +29,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Chapter 1.3");
     }
-
+    public void Thanks()
+    {
+        SceneManager.LoadScene("Thanks");
+    }
     public void Dialog1_1()
     {
         SceneManager.LoadScene("Dialog 1.1");
