@@ -12,10 +12,8 @@ public class SongManager : MonoBehaviour
 {
     public Lane lane;
     public static float noteTime;
-    public float noteSpawnY;
-    public float noteSpawnX;
-    public static float noteTapY = 0;
-    public static float noteTapX = 0;
+    public float noteSpawnY, noteSpawnX;
+    public static float noteTapY = 0, noteTapX = 0;
     public float noteDespawnY { get { return noteTapY - noteSpawnY; } }
     public float noteDespawnX { get { return noteTapX - noteSpawnX; } }
     

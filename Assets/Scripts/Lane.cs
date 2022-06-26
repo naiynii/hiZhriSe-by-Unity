@@ -40,16 +40,17 @@ public class Lane : MonoBehaviour
                 spawnIndex++;
             }
         }
-
         if (inputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[inputIndex];
-            double marginOfError = 0.067;
+            double marginOfError = 0.06;
             double audioTime = SongsManager.Instance.GetAudioSourceTime();
 
-            if (Input.GetKeyDown(input1)  && PauseMenu.GameIsPause == false || Input.GetKeyDown(input2) && PauseMenu.GameIsPause == false)
+            if (Input.GetKeyDown(input1) && PauseMenu.GameIsPause == false || Input.GetKeyDown(input2) && PauseMenu.GameIsPause == false)
             {
-                if (Math.Abs(audioTime - timeStamp) <= (marginOfError / 2) && Math.Abs(audioTime - timeStamp) >= 0)
+                if (Math.Abs(audioTime - timeStamp) <= (marginOfError / 2) 
+                // && Math.Abs(audioTime - timeStamp) >= 0
+                )
                 {
                     Perfect();
                     Debug.Log($"Perfecto hit!!, +1 Combo, +2 HP");

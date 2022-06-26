@@ -16,7 +16,6 @@ public class Result : MonoBehaviour
     {
         scoreMax = PlayerPrefs.GetInt("scoreMax", scoreMax);
         comboMax = PlayerPrefs.GetInt("comboMax", comboMax);
-        
         allPerfecto = PlayerPrefs.GetFloat("allPerfecto", allPerfecto);
         allNaisu = PlayerPrefs.GetFloat("allNaisu", allNaisu);
         allAir = PlayerPrefs.GetFloat("allAir", allAir);
@@ -37,30 +36,22 @@ public class Result : MonoBehaviour
         {
             resultScene.SetActive(true);
             Time.timeScale = 0f;
-            Rate();
+            ScoreManager.Rate();
 
             songName.text = SongsManager.songsName;
-
             finalRank.text = ScoreManager.rankResult;
-
             hitRate.text = ScoreManager.accRate2.ToString();
-
             scoreMax = ScoreManager.totalScore;
             maxScore.text = scoreMax.ToString();
-            
             comboMax = ScoreManager.comboStreak;
             PlayerPrefs.SetInt("comboMax", comboMax);
             maxCombo.text = comboMax.ToString();
-
             allPerfecto = ScoreManager.perf;
             countPerfecto.text = allPerfecto.ToString();
-
             allNaisu = ScoreManager.nais;
             countNaisu.text = allNaisu.ToString();
-
             allAir = ScoreManager.airr;
             countAir.text = allAir.ToString();
-
             allMisz = ScoreManager.mizs;
             countMisz.text = allMisz.ToString();
 
@@ -73,8 +64,5 @@ public class Result : MonoBehaviour
             Debug.Log("Accuracy: "   + ScoreManager.accRate2 + " %");
         }
     }
-    private void Rate()
-    {
-        ScoreManager.Rate();
-    }
+    
 }

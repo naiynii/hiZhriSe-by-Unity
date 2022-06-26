@@ -26,40 +26,57 @@ public class ScoreManager : MonoBehaviour
 
     public static void Perfecto()
     {
+        if (lifeScore < 100)
+        {
+            lifeScore += 2;
+        }
+
         comboScore += 1;
         totalScore += 300 * comboScore;
-        lifeScore += 2;
-        if (lifeScore >= 100) { lifeScore = 100; }
         perf += 1;
         Instance.hitSFX.Play();
     }
 
     public static void Naisu()
     {
+        if (lifeScore < 100)
+        {
+            lifeScore += 1;
+        }
+        
         comboScore += 1;
         totalScore += 100 * comboScore;
-        lifeScore += 1;
-        if (lifeScore >= 100) { lifeScore = 100; }
         nais += 1;
         Instance.hitSFX.Play();
     }
 
     public static void Air()
     {
-        if (comboStreak < comboScore) { comboStreak = comboScore; }
+        if (lifeScore > 0)
+        {
+            lifeScore -= 1;
+        }
+        if (comboStreak < comboScore)
+        {
+            comboStreak = comboScore;
+        }
+
         comboScore = 0;
-        lifeScore -= 1;
-        if (lifeScore <= 0) { lifeScore = 0; }
         airr += 1;
     }
 
     public static void Misz()
     {
-        if (comboStreak < comboScore) { comboStreak = comboScore; }
+        if (lifeScore > 0)
+        {
+            lifeScore -= 3;
+        }
+        if (comboStreak < comboScore)
+        {
+            comboStreak = comboScore;
+        }
+
         comboScore = 0;
-        totalScore += 0;
-        lifeScore -= 3;
-        if (lifeScore <= 0) { lifeScore = 0; }
         mizs += 1;
         Instance.missSFX.Play();
     }
@@ -68,16 +85,18 @@ public class ScoreManager : MonoBehaviour
     {
         allHit = perf + nais;
         allNote = allHit + mizs;
+
         if (allNote != 0)
         {
             accRate = (allHit / allNote) * 100f;
-            if      (accRate >= 90f) { rankResult = "S"; }
+            if (accRate >= 90f) { rankResult = "S"; }
             else if (accRate >= 80f) { rankResult = "A"; }
             else if (accRate >= 70f) { rankResult = "B"; }
             else if (accRate >= 60f) { rankResult = "C"; }
             else if (accRate >= 50f) { rankResult = "D"; }
             else if (accRate <  50f) { rankResult = "F"; }
         }
+        
         accRate2 = (float)Math.Round(accRate * 100f) / 100f;
     }
     
@@ -87,4 +106,5 @@ public class ScoreManager : MonoBehaviour
         comboText.text = comboScore.ToString();
         lifeText.text = lifeScore.ToString();
     }
+    
 }
