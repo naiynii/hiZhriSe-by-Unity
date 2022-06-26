@@ -16,6 +16,7 @@ public class Result : MonoBehaviour
     {
         scoreMax = PlayerPrefs.GetInt("scoreMax", scoreMax);
         comboMax = PlayerPrefs.GetInt("comboMax", comboMax);
+        
         allPerfecto = PlayerPrefs.GetFloat("allPerfecto", allPerfecto);
         allNaisu = PlayerPrefs.GetFloat("allNaisu", allNaisu);
         allAir = PlayerPrefs.GetFloat("allAir", allAir);

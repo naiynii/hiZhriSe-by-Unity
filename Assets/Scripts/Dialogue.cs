@@ -12,7 +12,6 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     private int index;
 
-    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
@@ -20,13 +19,14 @@ public class Dialogue : MonoBehaviour
         BgX();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
-            { NextLine(); }
+            { 
+                NextLine();
+            }
             else
             {
                 StopAllCoroutines();
@@ -36,33 +36,76 @@ public class Dialogue : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Dialog 1.1")
         {
-            if (index >= 0 && index < 9) { Bg1(); }
-            else if (index >= 9 && index < 22) { Bg2(); }
-            else if (index >= 22 && index < 29) { Bg3(); }
-            else { BgX(); }
+            if (index >= 0 && index < 9)
+            {
+                Bg1();
+            }
+            else if (index >= 9 && index < 22)
+            {
+                Bg2();
+            }
+            else if (index >= 22 && index < 29)
+            { 
+                Bg3();
+            }
+            else
+            {
+                BgX();
+            }
         }
+
         if (SceneManager.GetActiveScene().name == "Dialog 1.2")
         {
-            if (index >= 0 && index < 8) { Bg1(); }
-            else if (index >= 8 && index < 15 || index >= 18 && index < 24) { Bg2(); }
-            else if (index >= 15 && index < 18) { Bg3(); }
-            else if (index >= 24 && index < 31) { Bg4(); }
-            else if (index >= 31 && index < 38) { Bg5(); }
-            else { BgX(); }
+            if (index >= 0 && index < 8)
+            {
+                Bg1();
+            }
+            else if (index >= 8 && index < 15 || index >= 18 && index < 24)
+            {
+                Bg2();
+            }
+            else if (index >= 15 && index < 18)
+            {
+                Bg3();
+            }
+            else if (index >= 24 && index < 31)
+            {
+                Bg4();
+            }
+            else if (index >= 31 && index < 38)
+            {
+                Bg5();
+            }
+            else
+            {
+                BgX();
+            }
         }
+
         if (SceneManager.GetActiveScene().name == "Dialog 1.3")
         {
-            if (index >= 0 && index < 17 || index >= 21 && index < 31) { Bg1(); }
-            else if (index >= 17 && index < 21) { Bg2(); }
-            else { BgX(); }
+            if (index >= 0 && index < 17 || index >= 21 && index < 31)
+            {
+                Bg1();
+            }
+            else if (index >= 17 && index < 21)
+            {
+                Bg2();
+            }
+            else
+            {
+                BgX();
+            }
         }
 
     }
+
     void StartDialogue()
     {
         index = 0;
         StartCoroutine(TypeLine());
     }
+
     IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
@@ -71,6 +114,7 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
     }
+
     void NextLine()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -86,9 +130,9 @@ public class Dialogue : MonoBehaviour
             if (scene.name == "Dialog 1.1") { SceneManager.LoadScene("Chapter 1.1"); }
             if (scene.name == "Dialog 1.2") { SceneManager.LoadScene("Chapter 1.2"); }
             if (scene.name == "Dialog 1.3") { SceneManager.LoadScene("Chapter 1.3"); }
-            // gameObject.SetActive(false);
         }
     }
+
     void Bg1()
     {
         pic1.SetActive(true);
@@ -97,6 +141,7 @@ public class Dialogue : MonoBehaviour
         pic4.SetActive(false);
         pic5.SetActive(false);
     }
+    
     void Bg2()
     {
         pic1.SetActive(false);
@@ -105,6 +150,7 @@ public class Dialogue : MonoBehaviour
         pic4.SetActive(false);
         pic5.SetActive(false);
     }
+
     void Bg3()
     {
         pic1.SetActive(false);
@@ -113,6 +159,7 @@ public class Dialogue : MonoBehaviour
         pic4.SetActive(false);
         pic5.SetActive(false);
     }
+
     void Bg4()
     {
         pic1.SetActive(false);
@@ -121,6 +168,7 @@ public class Dialogue : MonoBehaviour
         pic4.SetActive(true);
         pic5.SetActive(false);
     }
+
     void Bg5()
     {
         pic1.SetActive(false);
@@ -129,6 +177,7 @@ public class Dialogue : MonoBehaviour
         pic4.SetActive(false);
         pic5.SetActive(true);
     }
+
     void BgX()
     {
         pic1.SetActive(false);

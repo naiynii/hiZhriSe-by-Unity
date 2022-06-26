@@ -6,15 +6,17 @@ public class Background : MonoBehaviour
 {
     public static float speed = 4f;
     private Vector3 StartPosition;
+
     void Start()
     {
         StartPosition = transform.position;
     }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(translation:Vector3.down * speed * Time.deltaTime);
-        if (transform.position.y < -15.50f) { transform.position = StartPosition; }
+        if (transform.position.y < -15.50f)
+        { 
+            transform.position = StartPosition;
+        }
     }
 }

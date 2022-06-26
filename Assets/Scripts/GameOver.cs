@@ -6,39 +6,36 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOver;
+
     void Update()
     {
         Lose();
     }
-    public void Lose()
+
+    private void Lose()
     {
         if (ScoreManager.lifeScore <= 0)
         {
             gameOver.SetActive(true);
-            Time.timeScale = 0f;
-            AudioListener.pause = true;
+            PauseMenu.Deactive();
         }
         else if (PauseMenu.GameIsPause == true)
         {
-            Time.timeScale = 0f;
-            AudioListener.pause = true;
+            PauseMenu.Deactive();
         }
         else
         {
-            Time.timeScale = 1f;
-            AudioListener.pause = false;
+            PauseMenu.Active();
         }
     }
+    
     public void Restart()
     {
-        Time.timeScale = 1f;
-        AudioListener.pause = false;
+        PauseMenu.Active();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void LoadMenu()
     {
-        Time.timeScale = 1f;
-        AudioListener.pause = false;
         SceneChanger.MainMenu();
     }
     public void QuitGame()

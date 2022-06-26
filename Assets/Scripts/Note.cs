@@ -13,7 +13,7 @@ public class Note : MonoBehaviour
     {
         timeInstantiated = SongsManager.Instance.GetAudioSourceTime();
     }
-    // Update is called once per frame
+    
     void Update()
     {
         double timeSinceInstantiated = SongsManager.Instance.GetAudioSourceTime() - timeInstantiated;
@@ -37,8 +37,12 @@ public class Note : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player") { Destroy(this.gameObject); }
+        if (col.tag == "Player")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

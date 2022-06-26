@@ -76,14 +76,12 @@ public class SaveManager : MonoBehaviour
                     SaveData();
                 }
             }
-
             // if (!File.Exists(pathLvl))
             // {
             //     dataLvl.level = 2;
             //     SaveData();
             // }
         }
-
         if (SceneManager.GetActiveScene().name == "Chapter 1.1")
         {
             if (!File.Exists(pathLvl))
@@ -92,7 +90,6 @@ public class SaveManager : MonoBehaviour
                 SaveData();
             }
         }
-
         if (SceneManager.GetActiveScene().name == "Chapter 1.2")
         {
             if (dataLvl.level < 3)
@@ -100,7 +97,6 @@ public class SaveManager : MonoBehaviour
                 dataLvl.level = 3;
                 SaveData();
             }
-            
             // using StreamReader reader = new StreamReader(pathLvl);
             // string json = reader.ReadToEnd();
             // reader.Dispose();
@@ -116,7 +112,6 @@ public class SaveManager : MonoBehaviour
             //     SaveData();
             // }
         }
-
         if (SceneManager.GetActiveScene().name == "Song 0")
         {
             if (!File.Exists(pathLvl))
@@ -146,7 +141,6 @@ public class SaveManager : MonoBehaviour
                 }
             }
         }
-
         if (SceneManager.GetActiveScene().name == "Song 1")
         {
             if (!File.Exists(path1))
@@ -176,7 +170,6 @@ public class SaveManager : MonoBehaviour
                 }
             }
         }
-
         if (SceneManager.GetActiveScene().name == "Song 2")
         {
             if (!File.Exists(path2))
@@ -246,7 +239,6 @@ public class SaveManager : MonoBehaviour
             Debug.Log(json);
             using StreamWriter writer = new StreamWriter(path0);
             writer.Write(json);
-
             // Debug.Log("Saving Data at " + pathLvl);
             // string json = JsonUtility.ToJson(dataLvl);
             // Debug.Log(json);
@@ -296,62 +288,5 @@ public class SaveManager : MonoBehaviour
             writer.Write(json);
         }
     }
-
-    // public void ReadData()
-    // {
-    //     if (SceneManager.GetActiveScene().name == "Chapter 1.0")
-    //     {
-    //         using StreamReader reader = new StreamReader(path0);
-    //         string json = reader.ReadToEnd();
-
-    //         Data0 dat0 = JsonUtility.FromJson<Data0>(json);
-    //         dat0.song0 = int.Parse(dat0.ToString());
-
-    //         Debug.Log("Highest Score: " + dat0.song0);
-    //     }
-    //     if (SceneManager.GetActiveScene().name == "Song 0")
-    //     {
-    //         using StreamReader reader = new StreamReader(path0);
-    //         string json = reader.ReadToEnd();
-
-    //         Data0 data0 = JsonUtility.FromJson<Data0>(json);
-    //         Debug.Log("Highest Score: " + data0.ToString());
-    //     }
-    //     if (SceneManager.GetActiveScene().name == "Song 1")
-    //     {
-    //         using StreamReader reader = new StreamReader(path1);
-    //         string json = reader.ReadToEnd();
-
-    //         Data1 data1 = JsonUtility.FromJson<Data1>(json);
-    //         Debug.Log("Highest Score: " + data1.ToString());
-    //     }
-    //     if (SceneManager.GetActiveScene().name == "Song 2")
-    //     {
-    //         using StreamReader reader = new StreamReader(path2);
-    //         string json = reader.ReadToEnd();
-
-    //         Data2 data2 = JsonUtility.FromJson<Data2>(json);
-    //         Debug.Log("Highest Score: " + data2.ToString());
-    //     }
-
-    //     if (SceneManager.GetActiveScene().name == "Song 3")
-    //     {
-    //         using StreamReader reader = new StreamReader(path3);
-    //         string json = reader.ReadToEnd();
-
-    //         Data3 data3 = JsonUtility.FromJson<Data3>(json);
-    //         Debug.Log("Highest Score: " + data3.ToString());
-    //     }
-    //     if (SceneManager.GetActiveScene().name == "Chapter 1.1"
-    //     ||  SceneManager.GetActiveScene().name == "Chapter 1.2" 
-    //     ||  SceneManager.GetActiveScene().name == "Chapter 1.3")
-    //     {
-    //         using StreamReader reader = new StreamReader(path4);
-    //         string json = reader.ReadToEnd();
-
-    //         Data4 data4 = JsonUtility.FromJson<Data4>(json);
-    //         Debug.Log(data4.ToString());
-    //     }
-    // }
 
 }

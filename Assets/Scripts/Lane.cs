@@ -26,7 +26,7 @@ public class Lane : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (spawnIndex < timeStamps.Count)
@@ -40,6 +40,7 @@ public class Lane : MonoBehaviour
                 spawnIndex++;
             }
         }
+
         if (inputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[inputIndex];
@@ -69,6 +70,7 @@ public class Lane : MonoBehaviour
                     Debug.Log($"Air hit?, with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} seconds delay, Combo cleared, -1 HP");
                 }
             }
+
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
@@ -77,18 +79,22 @@ public class Lane : MonoBehaviour
             }
         }
     }
+
     private void Perfect()
     {
         ScoreManager.Perfecto();
     }
+
     private void Nice()
     {
         ScoreManager.Naisu();
     }
+
     private void Air()
     {
         ScoreManager.Air();
     }
+    
     private void Miss()
     {
         ScoreManager.Misz();

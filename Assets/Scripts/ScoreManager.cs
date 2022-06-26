@@ -23,10 +23,7 @@ public class ScoreManager : MonoBehaviour
         lifeScore = 100;
         perf = 0f; nais = 0f; airr = 0f; mizs = 0f; allNote = 0f;
     }
-    public static void Reset()
-    {
-        comboScore = 0;
-    }
+
     public static void Perfecto()
     {
         comboScore += 1;
@@ -36,6 +33,7 @@ public class ScoreManager : MonoBehaviour
         perf += 1;
         Instance.hitSFX.Play();
     }
+
     public static void Naisu()
     {
         comboScore += 1;
@@ -45,6 +43,7 @@ public class ScoreManager : MonoBehaviour
         nais += 1;
         Instance.hitSFX.Play();
     }
+
     public static void Air()
     {
         if (comboStreak < comboScore) { comboStreak = comboScore; }
@@ -53,6 +52,7 @@ public class ScoreManager : MonoBehaviour
         if (lifeScore <= 0) { lifeScore = 0; }
         airr += 1;
     }
+
     public static void Misz()
     {
         if (comboStreak < comboScore) { comboStreak = comboScore; }
@@ -63,6 +63,7 @@ public class ScoreManager : MonoBehaviour
         mizs += 1;
         Instance.missSFX.Play();
     }
+
     public static void Rate()
     {
         allHit = perf + nais;
@@ -79,7 +80,8 @@ public class ScoreManager : MonoBehaviour
         }
         accRate2 = (float)Math.Round(accRate * 100f) / 100f;
     }
-    private void Update()
+    
+    void Update()
     {
         scoreText.text = totalScore.ToString();
         comboText.text = comboScore.ToString();

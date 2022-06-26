@@ -22,6 +22,7 @@ public class Leaderboard : MonoBehaviour
         Data0 high = JsonUtility.FromJson<Data0>(json);
         song0.text = high.song0.ToString();
     }
+
     private void Song1()
     {
         using StreamReader reader = new StreamReader(SaveManager.path1);
@@ -31,6 +32,7 @@ public class Leaderboard : MonoBehaviour
         Data1 high = JsonUtility.FromJson<Data1>(json);
         song1.text = high.song1.ToString();
     }
+    
     private void Song2()
     {
         using StreamReader reader = new StreamReader(SaveManager.path2);

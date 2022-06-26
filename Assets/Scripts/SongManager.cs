@@ -10,11 +10,6 @@ using UnityEngine.SceneManagement;
 
 public class SongManager : MonoBehaviour
 {
-    // public static SongManager Instance;
-    // public AudioSource audioSource;
-    // public float songDelayInSeconds;
-    // public double marginOfError; // in seconds
-    // public string fileLocation;
     public Lane lane;
     public static float noteTime;
     public float noteSpawnY;
@@ -33,34 +28,4 @@ public class SongManager : MonoBehaviour
         }
     }
 
-    // private void ReadFromFile()
-    // {
-    //     midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation);
-    //     // GetDataFromMidi();
-
-    //     Invoke(nameof(GetDataFromMidi), 1.0f);
-    // }
-    // public void GetDataFromMidi()
-    // {
-    //     var notes = midiFile.GetNotes();
-    //     var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
-    //     notes.CopyTo(array, 0);
-
-    //     lane.SetTimeStamps(array);
-
-    //     // Invoke(nameof(StartSong), songDelayInSeconds);
-    // }
-    // public void StartSong()
-    // {
-    //     audioSource.Play();
-    // }
-    // public double GetAudioSourceTime()
-    // {
-    //     return (double)audioSource.timeSamples / audioSource.clip.frequency;
-    // }
-
-    void Update()
-    {
-        
-    }
 }

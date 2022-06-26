@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
                 Resume();
             } 
             else 
-            { 
+            {
                 Pause();
             }
         }
@@ -25,34 +25,46 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        Deactive();
         GameIsPause = true;
-        AudioListener.pause = true;
     }
+
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        Active();
         GameIsPause = false;
-        AudioListener.pause = false;
     }
-    public static void Restart()
+
+    public void Restart()
     {
-        Time.timeScale = 1f;
+        Active();
         GameIsPause = false;
-        AudioListener.pause = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public static void LoadMenu()
+
+    public void LoadMenu()
     {
-        Time.timeScale = 1f;
         GameIsPause = false;
         SceneChanger.MainMenu();
     }
-    public static void QuitGame()
+
+    public void QuitGame()
     {
         GameIsPause = false;
         AudioListener.pause = false;
         SceneChanger.QuitGame();
+    }
+
+    public static void Active()
+    {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+    }
+    
+    public static void Deactive()
+    {
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
     }
 }
