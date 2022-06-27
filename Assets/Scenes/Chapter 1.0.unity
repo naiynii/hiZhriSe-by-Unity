@@ -485,6 +485,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1774172987740447261, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774172987740447261, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774172987740447261, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1774172987782244641, guid: 0d257f0d02b13b54ba9ac11f000f4344, type: 3}
       propertyPath: m_Name
       value: Result

@@ -26,59 +26,65 @@ public class ScoreManager : MonoBehaviour
 
     public static void Perfecto()
     {
-        if (lifeScore < 100)
-        {
-            lifeScore += 2;
-        }
-
+        lifeScore += 2;
         comboScore += 1;
         totalScore += 300 * comboScore;
         perf += 1;
         Instance.hitSFX.Play();
+
+        if (lifeScore > 100)
+        {
+            lifeScore = 100;
+        }
     }
 
     public static void Naisu()
     {
-        if (lifeScore < 100)
-        {
-            lifeScore += 1;
-        }
-        
+        lifeScore += 1;
         comboScore += 1;
         totalScore += 100 * comboScore;
         nais += 1;
         Instance.hitSFX.Play();
+
+        if (lifeScore > 100)
+        {
+            lifeScore = 100;
+        }
     }
 
     public static void Air()
     {
-        if (lifeScore > 0)
-        {
-            lifeScore -= 1;
-        }
         if (comboStreak < comboScore)
         {
             comboStreak = comboScore;
         }
 
+        lifeScore -= 1;
         comboScore = 0;
         airr += 1;
+
+        if (lifeScore < 0)
+        {
+            lifeScore = 0;
+        } 
     }
 
     public static void Misz()
     {
-        if (lifeScore > 0)
-        {
-            lifeScore -= 3;
-        }
         if (comboStreak < comboScore)
         {
             comboStreak = comboScore;
         }
 
+        lifeScore -= 3;
         comboScore = 0;
         mizs += 1;
         Instance.missSFX.Play();
+
+        if (lifeScore < 0)
+        {
+            lifeScore = 0;
+        }
     }
 
     public static void Rate()
