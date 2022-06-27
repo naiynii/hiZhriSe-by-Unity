@@ -74,11 +74,6 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Song 3");
     }
-    
-    public void Song4()
-    {
-        SceneManager.LoadScene("Song 4");
-    }
 
     public static void QuitGame()
     {

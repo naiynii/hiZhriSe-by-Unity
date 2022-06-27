@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Result : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Result : MonoBehaviour
     public TMPro.TextMeshProUGUI countPerfecto, countNaisu, countAir, countMisz;
     static int scoreMax, comboMax;
     static float allPerfecto, allNaisu, allAir, allMisz;
+    public Button continueButton;
     bool isEnd = false;
 
     void Start()
@@ -28,17 +30,17 @@ public class Result : MonoBehaviour
         {
             return;
         }
-        if (SongsManager.songsDuration > 0)
+        if (AudioManager.songsDuration > 0)
         {
-            SongsManager.songsDuration -= Time.deltaTime;
+            AudioManager.songsDuration -= Time.deltaTime;
         }
-        else if (SongsManager.songsDuration <= 0)
+        else if (AudioManager.songsDuration <= 0)
         {
             resultScene.SetActive(true);
             Time.timeScale = 0f;
             ScoreManager.Rate();
 
-            songName.text = SongsManager.songsName;
+            songName.text = AudioManager.songsName;
             finalRank.text = ScoreManager.rankResult;
             hitRate.text = ScoreManager.accRate2.ToString();
             scoreMax = ScoreManager.totalScore;
@@ -62,6 +64,10 @@ public class Result : MonoBehaviour
             Debug.Log("Miss count: " + ScoreManager.mizs);
             Debug.Log("Hit streak: " + comboMax);
             Debug.Log("Accuracy: "   + ScoreManager.accRate2 + " %");
+        }
+        else if (ScoreManager.rankResult == "F")
+        {
+            continueButton.enabled = false;
         }
     }
     

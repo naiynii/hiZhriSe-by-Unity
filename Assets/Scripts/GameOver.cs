@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOver;
+    public static bool gameIsOver;
+
+    void Start() 
+    { 
+        gameIsOver = false;
+    }
 
     void Update()
     {
@@ -18,8 +24,9 @@ public class GameOver : MonoBehaviour
         {
             gameOver.SetActive(true);
             PauseMenu.Deactive();
+            gameIsOver = true;
         }
-        else if (PauseMenu.GameIsPause == true)
+        else if (PauseMenu.gameIsPause == true)
         {
             PauseMenu.Deactive();
         }
@@ -34,10 +41,12 @@ public class GameOver : MonoBehaviour
         PauseMenu.Active();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
     public void LoadMenu()
     {
         SceneChanger.MainMenu();
     }
+
     public void QuitGame()
     {
         AudioListener.pause = false;

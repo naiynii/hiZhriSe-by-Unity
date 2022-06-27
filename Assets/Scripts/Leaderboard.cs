@@ -15,41 +15,58 @@ public class Leaderboard : MonoBehaviour
 
     private void Song0()
     {
+        try
+        {
         using StreamReader reader = new StreamReader(SaveManager.path0);
         string json = reader.ReadToEnd();
         reader.Dispose();
 
         Data0 high = JsonUtility.FromJson<Data0>(json);
         song0.text = high.song0.ToString();
+        }
+        catch {}
     }
 
     private void Song1()
     {
+        try
+        {
         using StreamReader reader = new StreamReader(SaveManager.path1);
         string json = reader.ReadToEnd();
         reader.Dispose();
 
         Data1 high = JsonUtility.FromJson<Data1>(json);
         song1.text = high.song1.ToString();
+        }
+        catch {}
     }
     
     private void Song2()
     {
+        try
+        {
         using StreamReader reader = new StreamReader(SaveManager.path2);
         string json = reader.ReadToEnd();
         reader.Dispose();
 
         Data2 high = JsonUtility.FromJson<Data2>(json);
         song2.text = high.song2.ToString();
+        }
+        catch {}
     }
 
     private void Song3()
     {
+        try
+        {
         using StreamReader reader = new StreamReader(SaveManager.path3);
         string json = reader.ReadToEnd();
         reader.Dispose();
 
         Data3 high = JsonUtility.FromJson<Data3>(json);
         song3.text = high.song3.ToString();
+        }
+        catch {}
     }
+
 }

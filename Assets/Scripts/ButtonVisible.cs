@@ -11,10 +11,15 @@ public class ButtonVisible : MonoBehaviour
     void Start()
     {
         SaveManager.SetPaths();
+        
+        try
+        {
         using StreamReader reader = new StreamReader(SaveManager.pathLvl);
         string json = reader.ReadToEnd();
         reader.Dispose();
         levels = JsonUtility.FromJson<DataLvl>(json);
+        }
+        catch {}
     }
     void Update()
     {

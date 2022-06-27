@@ -11,12 +11,12 @@ public class Note : MonoBehaviour
 
     void Start()
     {
-        timeInstantiated = SongsManager.Instance.GetAudioSourceTime();
+        timeInstantiated = AudioManager.Instance.GetAudioSourceTime();
     }
     
     void Update()
     {
-        double timeSinceInstantiated = SongsManager.Instance.GetAudioSourceTime() - timeInstantiated;
+        double timeSinceInstantiated = AudioManager.Instance.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.noteTime * 2));
 
         if (t > 1)
@@ -27,12 +27,12 @@ public class Note : MonoBehaviour
         {
             if (y)
             {
-                transform.localPosition = Vector3.Lerp(Vector3.up * SongsManager.Instance.songsManager[positionNote].noteSpawnY, Vector3.up * SongsManager.Instance.songsManager[positionNote].noteDespawnY, t);
+                transform.localPosition = Vector3.Lerp(Vector3.up * AudioManager.Instance.audioManager[positionNote].noteSpawnY, Vector3.up * AudioManager.Instance.audioManager[positionNote].noteDespawnY, t);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
             if (x)
             {
-                transform.localPosition = Vector3.Lerp(Vector3.right * SongsManager.Instance.songsManager[positionNote].noteSpawnX, Vector3.right * SongsManager.Instance.songsManager[positionNote].noteDespawnX, t);
+                transform.localPosition = Vector3.Lerp(Vector3.right * AudioManager.Instance.audioManager[positionNote].noteSpawnX, Vector3.right * AudioManager.Instance.audioManager[positionNote].noteDespawnX, t);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }

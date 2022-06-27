@@ -8,7 +8,6 @@ public class Lane : MonoBehaviour
 {
     public PositionNote positionNote;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
-    // public Melanchall.DryWetMidi.MusicTheory.Chord chordRestriction;
     public KeyCode input1, input2;
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
@@ -21,7 +20,7 @@ public class Lane : MonoBehaviour
         {
             if (note.NoteName == noteRestriction)
             {
-                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, SongsManager.midiFile.GetTempoMap());
+                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, AudioManager.midiFile.GetTempoMap());
                 timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }
         }
@@ -31,7 +30,7 @@ public class Lane : MonoBehaviour
     {
         if (spawnIndex < timeStamps.Count)
         {
-            if (SongsManager.Instance.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.noteTime)
+            if (AudioManager.Instance.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.noteTime)
             {
                 var note = Instantiate(notePrefab, transform);
                 notes.Add(note.GetComponent<Note>());
@@ -44,13 +43,12 @@ public class Lane : MonoBehaviour
         {
             double timeStamp = timeStamps[inputIndex];
             double marginOfError = 0.06;
-            double audioTime = SongsManager.Instance.GetAudioSourceTime();
+            double audioTime = AudioManager.Instance.GetAudioSourceTime();
 
-            if (Input.GetKeyDown(input1) && PauseMenu.GameIsPause == false || Input.GetKeyDown(input2) && PauseMenu.GameIsPause == false)
+            if (Input.GetKeyDown(input1) && PauseMenu.gameIsPause == false && GameOver.gameIsOver == false
+             || Input.GetKeyDown(input2) && PauseMenu.gameIsPause == false && GameOver.gameIsOver == false)
             {
-                if (Math.Abs(audioTime - timeStamp) <= (marginOfError / 2) 
-                // && Math.Abs(audioTime - timeStamp) >= 0
-                )
+                if (Math.Abs(audioTime - timeStamp) <= marginOfError / 2)
                 {
                     Perfect();
                     Debug.Log($"Perfecto hit!!, +1 Combo, +2 HP");
@@ -58,7 +56,7 @@ public class Lane : MonoBehaviour
                     inputIndex++;
                     //  on note {inputIndex + 1}
                 }
-                else if (Math.Abs(audioTime - timeStamp) <= marginOfError && Math.Abs(audioTime - timeStamp) > (marginOfError / 2))
+                else if (Math.Abs(audioTime - timeStamp) <= marginOfError && Math.Abs(audioTime - timeStamp) > marginOfError / 2)
                 {
                     Nice();
                     Debug.Log($"Naisu hit!, +1 Combo, +1 HP");

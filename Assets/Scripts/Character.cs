@@ -18,23 +18,23 @@ public class Character : MonoBehaviour
 
     private void OnButtonInput()
     {
-        if (Input.GetKey(KeyCode.LeftArrow) && PauseMenu.GameIsPause == false
-         || Input.GetKey(KeyCode.A) && PauseMenu.GameIsPause == false)
+        if (Input.GetKey(KeyCode.LeftArrow) && PauseMenu.gameIsPause == false
+         || Input.GetKey(KeyCode.A) && PauseMenu.gameIsPause == false)
         {
             anim.SetTrigger("lefting");
         }
-        if (Input.GetKey(KeyCode.RightArrow) && PauseMenu.GameIsPause == false
-         || Input.GetKey(KeyCode.D) && PauseMenu.GameIsPause == false)
+        if (Input.GetKey(KeyCode.RightArrow) && PauseMenu.gameIsPause == false
+         || Input.GetKey(KeyCode.D) && PauseMenu.gameIsPause == false)
         {
             anim.SetTrigger("righting");
         }
-        if (Input.GetKey(KeyCode.UpArrow) && PauseMenu.GameIsPause == false
-         || Input.GetKey(KeyCode.W) && PauseMenu.GameIsPause == false)
+        if (Input.GetKey(KeyCode.UpArrow) && PauseMenu.gameIsPause == false
+         || Input.GetKey(KeyCode.W) && PauseMenu.gameIsPause == false)
         {
             anim.SetTrigger("upping");
         }
-        if (Input.GetKey(KeyCode.DownArrow) && PauseMenu.GameIsPause == false
-         || Input.GetKey(KeyCode.S) && PauseMenu.GameIsPause == false)
+        if (Input.GetKey(KeyCode.DownArrow) && PauseMenu.gameIsPause == false
+         || Input.GetKey(KeyCode.S) && PauseMenu.gameIsPause == false)
         {
             anim.SetTrigger("downing");
         }

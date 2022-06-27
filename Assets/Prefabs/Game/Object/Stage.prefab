@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71ab9caf508b6224db0b8f8cc6547e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1 &853214405690144246
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853214406148613811}
   m_Layer: 0
-  m_Name: Objects
+  m_Name: Stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

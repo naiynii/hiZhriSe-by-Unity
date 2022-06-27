@@ -9,23 +9,23 @@ using System;
 using UnityEngine.SceneManagement;
 
 public enum PositionNote { Up, Down, Left, Right }
-public class SongsManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public string fileLocation;
     public static MidiFile midiFile;
     public AudioSource audioSource;
-    public Dictionary<PositionNote, SongManager> songsManager = new Dictionary<PositionNote, SongManager>();
-    public static SongsManager Instance;
+    public Dictionary<PositionNote, SongManager> audioManager = new Dictionary<PositionNote, SongManager>();
+    public static AudioManager Instance;
     public static float songsDuration;
     public static string songsName;
 
     void Start()
     {
         Instance = this;
-        songsManager.Add(PositionNote.Up, transform.GetChild(0).GetComponent<SongManager>());
-        songsManager.Add(PositionNote.Down, transform.GetChild(1).GetComponent<SongManager>());
-        songsManager.Add(PositionNote.Left, transform.GetChild(2).GetComponent<SongManager>());
-        songsManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());
+        audioManager.Add(PositionNote.Up, transform.GetChild(0).GetComponent<SongManager>());
+        audioManager.Add(PositionNote.Down, transform.GetChild(1).GetComponent<SongManager>());
+        audioManager.Add(PositionNote.Left, transform.GetChild(2).GetComponent<SongManager>());
+        audioManager.Add(PositionNote.Right, transform.GetChild(3).GetComponent<SongManager>());
 
         ReadFromFile();
         
@@ -46,7 +46,7 @@ public class SongsManager : MonoBehaviour
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
-        foreach (var songManager in songsManager)
+        foreach (var songManager in audioManager)
         {
             songManager.Value.lane.SetTimeStamps(array);
         }
