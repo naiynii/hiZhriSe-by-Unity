@@ -65,7 +65,7 @@ public class Result : MonoBehaviour
             Debug.Log("Hit streak: " + comboMax);
             Debug.Log("Accuracy: "   + ScoreManager.accRate2 + " %");
         }
-        else if (ScoreManager.rankResult == "F")
+        else if (ScoreManager.rankResult == "F" || ScoreManager.rankResult == "D")
         {
             continueButton.enabled = false;
         }
