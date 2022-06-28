@@ -23,7 +23,7 @@ public class Result : MonoBehaviour
         allAir = PlayerPrefs.GetFloat("allAir", allAir);
         allMisz = PlayerPrefs.GetFloat("allMisz", allMisz);
     }
-    
+
     void Update()
     {
         if (isEnd == true)
@@ -58,17 +58,17 @@ public class Result : MonoBehaviour
             countMisz.text = allMisz.ToString();
 
             isEnd = true;
-            
-            Debug.Log("All notes: "  + ScoreManager.allNote);
-            Debug.Log("Hit count: "  + ScoreManager.allHit + " (Perfecto!! " + ScoreManager.perf + ", Naisu! " + ScoreManager.nais + ")");
-            Debug.Log("Miss count: " + ScoreManager.mizs);
-            Debug.Log("Hit streak: " + comboMax);
-            Debug.Log("Accuracy: "   + ScoreManager.accRate2 + " %");
+
+            Debug.Log("Notes count: " + ScoreManager.allNote);
+            Debug.Log("Hit: " + ScoreManager.allHit + " (Perfecto!! " + ScoreManager.perf + ", Naisu! " + ScoreManager.nais + ")");
+            Debug.Log("Miss: " + ScoreManager.mizs);
+            Debug.Log("Streak: " + comboMax);
+            Debug.Log("Accuracy: " + ScoreManager.accRate2 + " %");
         }
         else if (ScoreManager.rankResult == "F" || ScoreManager.rankResult == "D")
         {
             continueButton.enabled = false;
         }
     }
-    
+
 }
