@@ -36,6 +36,10 @@ public class ScoreManager : MonoBehaviour
         {
             lifeScore = 100;
         }
+        if (comboStreak < comboScore)
+        {
+            comboStreak = comboScore;
+        }
     }
 
     public static void Naisu()
@@ -49,6 +53,10 @@ public class ScoreManager : MonoBehaviour
         if (lifeScore > 100)
         {
             lifeScore = 100;
+        }
+        if (comboStreak < comboScore)
+        {
+            comboStreak = comboScore;
         }
     }
 

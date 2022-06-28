@@ -4,10 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public sealed class Octave
+{
+
+}
 public class Lane : MonoBehaviour
 {
     public PositionNote positionNote;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
+    public const int OctaveSize = 1;
     public KeyCode input1, input2;
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();
@@ -41,39 +46,39 @@ public class Lane : MonoBehaviour
         }
         if (inputIndex < timeStamps.Count)
         {
-            double timeStamp = timeStamps[inputIndex];
-            double marginOfError = 0.06;
             double audioTime = AudioManager.Instance.GetAudioSourceTime();
+            double timeStamp = timeStamps[inputIndex];
+            double marginOfError = 0.08;
+            double timeDifference = audioTime - timeStamp;
+            var delay = ((float)Math.Round((timeDifference) * 100f) / 100f);
 
             if (Input.GetKeyDown(input1) && PauseMenu.gameIsPause == false && GameOver.gameIsOver == false
              || Input.GetKeyDown(input2) && PauseMenu.gameIsPause == false && GameOver.gameIsOver == false)
             {
-                if (Math.Abs(audioTime - timeStamp) <= marginOfError / 2)
+                if (Math.Abs(timeDifference) <= marginOfError / 2)
                 {
                     Perfect();
-                    Debug.Log($"Perfecto hit!!, +1 Combo, +2 HP");
+                    Debug.Log($"Perfecto hit!!: combo +1, hp +2, delay " + delay + " seconds");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
-                    //  on note {inputIndex + 1}
                 }
-                else if (Math.Abs(audioTime - timeStamp) <= marginOfError && Math.Abs(audioTime - timeStamp) > marginOfError / 2)
+                else if (Math.Abs(timeDifference) <= marginOfError)
                 {
                     Nice();
-                    Debug.Log($"Naisu hit!, +1 Combo, +1 HP");
+                    Debug.Log($"Naisu hit!: combo +1, hp +1, delay " + delay + " seconds");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
                 else
                 {
                     Air();
-                    Debug.Log($"Air hit?, with {Math.Abs((float)Math.Round((audioTime - timeStamp) * 1000f) / 1000f)} seconds delay, Combo cleared, -1 HP");
+                    Debug.Log($"Air hit: combo cleared, hp -1, delay "+ delay + " seconds");
                 }
             }
-
-            if (timeStamp + marginOfError <= audioTime)
+            if (timeDifference > marginOfError)
             {
                 Miss();
-                Debug.Log($"Misz!?, Combo cleared, -3 HP");
+                Debug.Log($"Misz!?: combo cleared, hp -3");
                 inputIndex++;
             }
         }
