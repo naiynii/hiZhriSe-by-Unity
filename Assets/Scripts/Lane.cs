@@ -4,10 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class Octave
-{
-
-}
 public class Lane : MonoBehaviour
 {
     public PositionNote positionNote;
@@ -48,21 +44,21 @@ public class Lane : MonoBehaviour
         {
             double audioTime = AudioManager.Instance.GetAudioSourceTime();
             double timeStamp = timeStamps[inputIndex];
-            double marginOfError = 0.08;
-            double timeDifference = audioTime - timeStamp;
-            var delay = ((float)Math.Round((timeDifference) * 100f) / 100f);
+            float marginOfError = 0.080f;
+            double timeDiff = audioTime - timeStamp;
+            var delay = ((float)Math.Round((timeDiff) * 1000f) / 1000f);
 
             if (Input.GetKeyDown(input1) && PauseMenu.gameIsPause == false && GameOver.gameIsOver == false
              || Input.GetKeyDown(input2) && PauseMenu.gameIsPause == false && GameOver.gameIsOver == false)
             {
-                if (Math.Abs(timeDifference) <= marginOfError / 2)
+                if (Math.Abs(timeDiff) <= marginOfError / 2)
                 {
                     Perfect();
                     Debug.Log($"Perfecto hit!!: combo +1, hp +2, delay " + delay + " seconds");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
-                else if (Math.Abs(timeDifference) <= marginOfError)
+                else if (Math.Abs(timeDiff) <= marginOfError)
                 {
                     Nice();
                     Debug.Log($"Naisu hit!: combo +1, hp +1, delay " + delay + " seconds");
@@ -75,7 +71,7 @@ public class Lane : MonoBehaviour
                     Debug.Log($"Air hit: combo cleared, hp -1, delay "+ delay + " seconds");
                 }
             }
-            if (timeDifference > marginOfError)
+            if (timeDiff > marginOfError)
             {
                 Miss();
                 Debug.Log($"Misz!?: combo cleared, hp -3");
