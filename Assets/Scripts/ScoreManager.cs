@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public static string rankResult = "";
     static float accRate = 0f;
     public static float accRate2;
-    public static float perf, nais, airr, mizs, allHit, allNote;
+    public static float nPer, nNai, nAir, nMis, nHit, nNote;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
         comboScore = 0;
         comboStreak = 0;
         lifeScore = 100;
-        perf = 0f; nais = 0f; airr = 0f; mizs = 0f; allNote = 0f;
+        nPer = 0f; nNai = 0f; nAir = 0f; nMis = 0f; nNote = 0f;
     }
 
     public static void Perfecto()
@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
         lifeScore += 2;
         comboScore += 1;
         totalScore += 300 * comboScore;
-        perf += 1;
+        nPer += 1;
         Instance.hitSFX.Play();
 
         if (lifeScore > 100)
@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
         lifeScore += 1;
         comboScore += 1;
         totalScore += 100 * comboScore;
-        nais += 1;
+        nNai += 1;
         Instance.hitSFX.Play();
 
         if (lifeScore > 100)
@@ -69,7 +69,7 @@ public class ScoreManager : MonoBehaviour
 
         lifeScore -= 1;
         comboScore = 0;
-        airr += 1;
+        nAir += 1;
 
         if (lifeScore < 0)
         {
@@ -86,7 +86,7 @@ public class ScoreManager : MonoBehaviour
 
         lifeScore -= 3;
         comboScore = 0;
-        mizs += 1;
+        nMis += 1;
         Instance.missSFX.Play();
 
         if (lifeScore < 0)
@@ -97,12 +97,12 @@ public class ScoreManager : MonoBehaviour
 
     public static void Rate()
     {
-        allHit = perf + nais;
-        allNote = allHit + mizs;
+        nHit = nPer + nNai;
+        nNote = nHit + nMis;
 
-        if (allNote != 0)
+        if (nNote != 0)
         {
-            accRate = (allHit / allNote) * 100f;
+            accRate = (nHit / nNote) * 100f;
             if (accRate >= 90f) { rankResult = "S"; }
             else if (accRate >= 80f) { rankResult = "A"; }
             else if (accRate >= 70f) { rankResult = "B"; }

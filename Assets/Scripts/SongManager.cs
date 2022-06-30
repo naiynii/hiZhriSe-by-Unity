@@ -18,7 +18,7 @@ public class SongManager : MonoBehaviour
     
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Chapter 1.0" || SceneManager.GetActiveScene().name == "Chapter 1.1" 
+        if (SceneManager.GetActiveScene().name == "Chapter 1.0" || SceneManager.GetActiveScene().name == "Chapter 1.1"
          || SceneManager.GetActiveScene().name == "Chapter 1.2" || SceneManager.GetActiveScene().name == "Chapter 1.3")
         {
             Difficulty.Normal();
