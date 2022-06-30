@@ -10,18 +10,17 @@ public class Result : MonoBehaviour
     public TMPro.TextMeshProUGUI maxScore, maxCombo;
     public TMPro.TextMeshProUGUI countPerfecto, countNaisu, countAir, countMisz;
     static int scoreMax, comboMax;
-    static float allPerfecto, allNaisu, allAir, allMisz;
+    static float nPerfecto, nNaisu, nAirr, nMisz;
     public Button continueButton;
     bool isEnd = false;
 
     void Start()
     {
         scoreMax = PlayerPrefs.GetInt("scoreMax", scoreMax);
-        comboMax = PlayerPrefs.GetInt("comboMax", comboMax);
-        allPerfecto = PlayerPrefs.GetFloat("allPerfecto", allPerfecto);
-        allNaisu = PlayerPrefs.GetFloat("allNaisu", allNaisu);
-        allAir = PlayerPrefs.GetFloat("allAir", allAir);
-        allMisz = PlayerPrefs.GetFloat("allMisz", allMisz);
+        nPerfecto = PlayerPrefs.GetFloat("nPerfecto", nPerfecto);
+        nNaisu = PlayerPrefs.GetFloat("nNaisu", nNaisu);
+        nAirr = PlayerPrefs.GetFloat("nAir", nAirr);
+        nMisz = PlayerPrefs.GetFloat("nMisz", nMisz);
     }
 
     void Update()
@@ -46,28 +45,28 @@ public class Result : MonoBehaviour
             scoreMax = ScoreManager.totalScore;
             maxScore.text = scoreMax.ToString();
             comboMax = ScoreManager.comboStreak;
-            PlayerPrefs.SetInt("comboMax", comboMax);
             maxCombo.text = comboMax.ToString();
-            allPerfecto = ScoreManager.perf;
-            countPerfecto.text = allPerfecto.ToString();
-            allNaisu = ScoreManager.nais;
-            countNaisu.text = allNaisu.ToString();
-            allAir = ScoreManager.airr;
-            countAir.text = allAir.ToString();
-            allMisz = ScoreManager.mizs;
-            countMisz.text = allMisz.ToString();
+            nPerfecto = ScoreManager.nPer;
+            countPerfecto.text = nPerfecto.ToString();
+            nNaisu = ScoreManager.nNai;
+            countNaisu.text = nNaisu.ToString();
+            nAirr = ScoreManager.nAir;
+            countAir.text = nAirr.ToString();
+            nMisz = ScoreManager.nMis;
+            countMisz.text = nMisz.ToString();
+
+            if (ScoreManager.rankResult == "F" || ScoreManager.rankResult == "D")
+            {
+                continueButton.enabled = false;
+            }
 
             isEnd = true;
 
-            Debug.Log("Notes count: " + ScoreManager.allNote);
-            Debug.Log("Hit: " + ScoreManager.allHit + " (Perfecto!! " + ScoreManager.perf + ", Naisu! " + ScoreManager.nais + ")");
-            Debug.Log("Miss: " + ScoreManager.mizs);
+            Debug.Log("Notes count: " + ScoreManager.nNote);
+            Debug.Log("Hit: " + ScoreManager.nHit + " (Perfecto!! " + ScoreManager.nPer + ", Naisu! " + ScoreManager.nNai + ")");
+            Debug.Log("Miss: " + ScoreManager.nMis);
             Debug.Log("Streak: " + comboMax);
             Debug.Log("Accuracy: " + ScoreManager.accRate2 + " %");
-        }
-        else if (ScoreManager.rankResult == "F" || ScoreManager.rankResult == "D")
-        {
-            continueButton.enabled = false;
         }
     }
 

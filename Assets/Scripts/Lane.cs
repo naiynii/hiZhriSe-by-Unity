@@ -8,7 +8,6 @@ public class Lane : MonoBehaviour
 {
     public PositionNote positionNote;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
-    public const int OctaveSize = 1;
     public KeyCode input1, input2;
     public GameObject notePrefab;
     List<Note> notes = new List<Note>();

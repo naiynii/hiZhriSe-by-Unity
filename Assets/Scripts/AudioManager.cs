@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
             songManager.Value.lane.SetTimeStamps(array);
         }
 
-        StartSong();
+        audioSource.Play();
     }
 
     public double GetAudioSourceTime()
@@ -59,8 +59,4 @@ public class AudioManager : MonoBehaviour
         return (double)audioSource.timeSamples / audioSource.clip.frequency;
     }
     
-    public void StartSong()
-    {
-        audioSource.Play();
-    }
 }
