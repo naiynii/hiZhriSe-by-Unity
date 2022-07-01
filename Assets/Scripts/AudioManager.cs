@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
         
         songsDuration = (float)Math.Round(audioSource.clip.length * 1000f) / 1000f;
         songsName = audioSource.clip.ToString().Replace(" (UnityEngine.AudioClip)", "");
-        Debug.Log("Now playing: " + songsName + "; Song duration: " + songsDuration + " seconds");
+        Debug.Log(songsName + ": Song duration: " + songsDuration + " seconds");
     }
 
     private void ReadFromFile()
@@ -46,9 +46,9 @@ public class AudioManager : MonoBehaviour
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
-        foreach (var songManager in audioManager)
+        foreach (var note in audioManager)
         {
-            songManager.Value.lane.SetTimeStamps(array);
+            note.Value.lane.SetTimeStamps(array);
         }
 
         audioSource.Play();

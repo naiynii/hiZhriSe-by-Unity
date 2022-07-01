@@ -7,19 +7,19 @@ public class Difficulty : MonoBehaviour
 {
     public static void Easy()
     {
-        SongManager.noteTime = 1.15f;
+        SongManager.noteTime = 1.00f;
         Background.speed = 4f;
     }
 
     public static void Normal()
     {
-        SongManager.noteTime = 1.0f;
+        SongManager.noteTime = 0.80f;
         Background.speed = 5f;
     }
 
     public static void Hard()
     {
-        SongManager.noteTime = 0.85f;
+        SongManager.noteTime = 0.60f;
         Background.speed = 6f;
     }
     
