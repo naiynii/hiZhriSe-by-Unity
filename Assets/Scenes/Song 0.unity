@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 227553577}
-  noteSpawnY: 6
+  noteSpawnY: 5
   noteSpawnX: 0
 --- !u!4 &662979249
 Transform:
@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lane: {fileID: 885724009}
   noteSpawnY: 0
-  noteSpawnX: 6
+  noteSpawnX: 5
 --- !u!1 &885724008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lane: {fileID: 61911278}
   noteSpawnY: 0
-  noteSpawnX: -6
+  noteSpawnX: -5
 --- !u!114 &976881556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3152081236290034566, guid: d411ab7873db2864bab23e4b082b9af9, type: 3}
@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 363343160}
-  noteSpawnY: -6
+  noteSpawnY: -5
   noteSpawnX: 0
 --- !u!1 &1134483916
 GameObject:

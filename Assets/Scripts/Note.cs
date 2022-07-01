@@ -19,30 +19,31 @@ public class Note : MonoBehaviour
         double timeSinceInstantiated = AudioManager.Instance.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (SongManager.noteTime * 2));
 
-        if (t > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
+        // if (t > 1)
+        // {
+        //     Destroy(gameObject);
+        // }
+        // else
+        if (t <= 1)
         {
             if (y)
             {
-                transform.localPosition = Vector3.Lerp(Vector3.up * AudioManager.Instance.audioManager[positionNote].noteSpawnY, Vector3.up * AudioManager.Instance.audioManager[positionNote].noteDespawnY, t);
+                transform.localPosition = Vector3.Lerp(Vector3.up * AudioManager.Instance.audioManager[positionNote].noteSpawnY, Vector3.down * AudioManager.Instance.audioManager[positionNote].noteSpawnY, t);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
             if (x)
             {
-                transform.localPosition = Vector3.Lerp(Vector3.right * AudioManager.Instance.audioManager[positionNote].noteSpawnX, Vector3.right * AudioManager.Instance.audioManager[positionNote].noteDespawnX, t);
+                transform.localPosition = Vector3.Lerp(Vector3.right * AudioManager.Instance.audioManager[positionNote].noteSpawnX, Vector3.left * AudioManager.Instance.audioManager[positionNote].noteSpawnX, t);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.tag == "Player")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.tag == "Player")
+    //     {
+    //         Destroy(this.gameObject);
+    //     }
+    // }
 }

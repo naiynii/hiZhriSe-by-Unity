@@ -836,7 +836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 1139018739}
-  noteSpawnY: 6
+  noteSpawnY: 5
   noteSpawnX: 0
 --- !u!4 &662979249
 Transform:
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lane: {fileID: 1396984726}
   noteSpawnY: 0
-  noteSpawnX: 6
+  noteSpawnX: 5
 --- !u!1001 &802519056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lane: {fileID: 558573255}
   noteSpawnY: 0
-  noteSpawnX: -6
+  noteSpawnX: -5
 --- !u!1001 &915955993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lane: {fileID: 189440617}
-  noteSpawnY: -6
+  noteSpawnY: -5
   noteSpawnX: 0
 --- !u!1 &1134483916
 GameObject:

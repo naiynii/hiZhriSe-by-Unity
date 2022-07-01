@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lane: {fileID: 0}
   noteSpawnY: 0
-  noteSpawnX: -6
+  noteSpawnX: -5

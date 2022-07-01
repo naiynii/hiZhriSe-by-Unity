@@ -1743,6 +1743,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 853214406448293753, guid: 35a6c72037c4d86458810eeedc0ea82b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35a6c72037c4d86458810eeedc0ea82b, type: 3}
 --- !u!1 &1924437651
@@ -2007,10 +2011,6 @@ PrefabInstance:
       propertyPath: lane
       value: 
       objectReference: {fileID: 61911278}
-    - target: {fileID: 1128319735370988677, guid: 2a817d156583e35499f530ca652f363b, type: 3}
-      propertyPath: noteSpawnX
-      value: -6
-      objectReference: {fileID: 0}
     - target: {fileID: 1128319735370988678, guid: 2a817d156583e35499f530ca652f363b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2120,10 +2120,6 @@ PrefabInstance:
       propertyPath: lane
       value: 
       objectReference: {fileID: 885724009}
-    - target: {fileID: 2145774523299105533, guid: f69ede9a8af0ba24b92ae3554fc49664, type: 3}
-      propertyPath: noteSpawnX
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f69ede9a8af0ba24b92ae3554fc49664, type: 3}
 --- !u!1001 &5347517282778930238
@@ -2181,10 +2177,6 @@ PrefabInstance:
       propertyPath: lane
       value: 
       objectReference: {fileID: 363343160}
-    - target: {fileID: 5347517281691590189, guid: 703caddd297b6ad4fa68d0c7a94c5a50, type: 3}
-      propertyPath: noteSpawnY
-      value: -6
-      objectReference: {fileID: 0}
     - target: {fileID: 5347517281691590191, guid: 703caddd297b6ad4fa68d0c7a94c5a50, type: 3}
       propertyPath: m_Name
       value: Down
@@ -2206,10 +2198,6 @@ PrefabInstance:
       propertyPath: lane
       value: 
       objectReference: {fileID: 227553577}
-    - target: {fileID: 5691628227055002166, guid: 6988abec6120d5d428d7140abf074acc, type: 3}
-      propertyPath: noteSpawnY
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 5691628227055002167, guid: 6988abec6120d5d428d7140abf074acc, type: 3}
       propertyPath: m_RootOrder
       value: 0
