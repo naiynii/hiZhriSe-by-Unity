@@ -79,20 +79,20 @@ public class ScoreManager : MonoBehaviour
 
     public static void Misz()
     {
-        if (comboStreak < comboScore)
-        {
-            comboStreak = comboScore;
-        }
+        // if (comboStreak < comboScore)
+        // {
+        //     comboStreak = comboScore;
+        // }
 
-        lifeScore -= 3;
-        comboScore = 0;
+        // lifeScore -= 3;
+        // comboScore = 0;
         nMis += 1;
         Instance.missSFX.Play();
 
-        if (lifeScore < 0)
-        {
-            lifeScore = 0;
-        }
+    //     if (lifeScore < 0)
+    //     {
+    //         lifeScore = 0;
+    //     }
     }
 
     public static void Rate()
