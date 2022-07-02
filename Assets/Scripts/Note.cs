@@ -16,24 +16,24 @@ public class Note : MonoBehaviour
     
     void Update()
     {
-        double timeSinceInstantiated = AudioManager.Instance.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (SongManager.noteTime * 2));
+        double timeAfterInstantiated = AudioManager.Instance.GetAudioSourceTime() - timeInstantiated;
+        float ratio = (float)(timeAfterInstantiated / (SongManager.noteTime * 2));
 
         // if (t > 1)
         // {
         //     Destroy(gameObject);
         // }
         // else
-        if (t <= 1)
+        if (ratio <= 1)
         {
             if (y)
             {
-                transform.localPosition = Vector3.Lerp(Vector3.up * AudioManager.Instance.audioManager[positionNote].noteSpawnY, Vector3.down * AudioManager.Instance.audioManager[positionNote].noteSpawnY, t);
+                transform.localPosition = Vector3.Lerp(Vector3.up * AudioManager.Instance.audioManager[positionNote].noteSpawnY, Vector3.down * AudioManager.Instance.audioManager[positionNote].noteSpawnY, ratio);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
             if (x)
             {
-                transform.localPosition = Vector3.Lerp(Vector3.right * AudioManager.Instance.audioManager[positionNote].noteSpawnX, Vector3.left * AudioManager.Instance.audioManager[positionNote].noteSpawnX, t);
+                transform.localPosition = Vector3.Lerp(Vector3.right * AudioManager.Instance.audioManager[positionNote].noteSpawnX, Vector3.left * AudioManager.Instance.audioManager[positionNote].noteSpawnX, ratio);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }
