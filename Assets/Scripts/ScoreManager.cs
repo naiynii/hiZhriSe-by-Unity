@@ -89,10 +89,10 @@ public class ScoreManager : MonoBehaviour
         nMis += 1;
         Instance.missSFX.Play();
 
-    //     if (lifeScore < 0)
-    //     {
-    //         lifeScore = 0;
-    //     }
+        // if (lifeScore < 0)
+        // {
+        //     lifeScore = 0;
+        // }
     }
 
     public static void Rate()

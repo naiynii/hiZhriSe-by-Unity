@@ -75,6 +75,7 @@ public class Lane : MonoBehaviour
             {
                 Miss();
                 Debug.Log($"Misz!?: combo cleared, hp -3");
+                Destroy(notes[inputIndex].gameObject);
                 inputIndex++;
             }
         }

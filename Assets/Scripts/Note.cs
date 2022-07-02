@@ -21,7 +21,7 @@ public class Note : MonoBehaviour
 
         if (t > 1)
         {
-            Destroy(gameObject);
+     
         }
         else
         {
@@ -38,11 +38,11 @@ public class Note : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.tag == "Player")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+    // private void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.tag == "Player")
+    //     {
+    //         Destroy(this.gameObject);
+    //     }
+    // }
 }

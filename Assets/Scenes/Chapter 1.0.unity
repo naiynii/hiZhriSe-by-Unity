@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 0
-  noteRestriction: 11
+  noteRestriction: 7
   input1: 273
   input2: 119
   notePrefab: {fileID: 949527207523006638, guid: 195bbca4e0083204084d34246cf67a9e, type: 3}
@@ -255,7 +255,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d5a9e35f5c124214c9ad63a4f07dc20e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7c022004d04d95f43a36b91ea564a1b1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 3
-  noteRestriction: 8
+  noteRestriction: 4
   input1: 275
   input2: 100
   notePrefab: {fileID: 2949761833030092001, guid: b248052d5af1dc649af10a269fd7478c, type: 3}
@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e594a00dcea95141a8880411a72b11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileLocation: Nay.mid
+  fileLocation: 1.0 Original.mid
   audioSource: {fileID: 310983716}
 --- !u!1 &1944331132
 GameObject:
