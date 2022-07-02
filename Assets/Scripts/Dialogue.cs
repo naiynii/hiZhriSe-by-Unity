@@ -8,15 +8,19 @@ public class Dialogue : MonoBehaviour
 {
     public GameObject pic1, pic2, pic3, pic4, pic5;
     public TextMeshProUGUI textComponent;
+    public GameObject fading;
     public string[] lines;
     public float textSpeed;
     private int index;
 
+
     void Start()
     {
         textComponent.text = string.Empty;
+        fading.SetActive(false);
         StartDialogue();
         BgX();
+        
     }
 
     void Update()
@@ -24,7 +28,7 @@ public class Dialogue : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
-            { 
+            {
                 NextLine();
             }
             else
@@ -45,7 +49,7 @@ public class Dialogue : MonoBehaviour
                 Bg2();
             }
             else if (index >= 22 && index < 29)
-            { 
+            {
                 Bg3();
             }
             else
@@ -127,9 +131,38 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            if (scene.name == "Dialog 1.1") { SceneManager.LoadScene("Chapter 1.1"); }
-            if (scene.name == "Dialog 1.2") { SceneManager.LoadScene("Chapter 1.2"); }
-            if (scene.name == "Dialog 1.3") { SceneManager.LoadScene("Chapter 1.3"); }
+            fading.SetActive(true);
+
+            if (scene.name == "Dialog 1.1")
+            {
+                SceneManager.LoadScene("Chapter 1.1");
+            }
+            if (scene.name == "Dialog 1.2")
+            {
+                SceneManager.LoadScene("Chapter 1.2");
+            }
+            if (scene.name == "Dialog 1.3")
+            {
+                SceneManager.LoadScene("Chapter 1.3");
+            }
+        }
+    }
+
+    public void SkipAll()
+    {
+        fading.SetActive(true);
+
+        if (SceneManager.GetActiveScene().name == "Dialog 1.1")
+        {
+            SceneManager.LoadScene("Chapter 1.1");
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.2")
+        {
+            SceneManager.LoadScene("Chapter 1.2");
+        }
+        if (SceneManager.GetActiveScene().name == "Dialog 1.3")
+        {
+            SceneManager.LoadScene("Chapter 1.3");
         }
     }
 
@@ -141,7 +174,7 @@ public class Dialogue : MonoBehaviour
         pic4.SetActive(false);
         pic5.SetActive(false);
     }
-    
+
     void Bg2()
     {
         pic1.SetActive(false);

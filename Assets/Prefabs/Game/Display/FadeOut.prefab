@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8450562067756290367}
   - component: {fileID: 8450562067756290366}
   m_Layer: 0
-  m_Name: Fader
+  m_Name: FadeOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ Animator:
   m_GameObject: {fileID: 8450562067756290336}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6e1567441ea47d84c85a6e525d85e01a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
