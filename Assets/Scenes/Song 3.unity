@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 2
-  noteRestriction: 6
+  noteRestriction: 7
   input1: 276
   input2: 97
   notePrefab: {fileID: 5805958356765802217, guid: d2543cb544c5a2f43a52a09113f1700f, type: 3}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 0
-  noteRestriction: 7
+  noteRestriction: 10
   input1: 273
   input2: 119
   notePrefab: {fileID: 949527207523006638, guid: 195bbca4e0083204084d34246cf67a9e, type: 3}
@@ -257,7 +257,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c1c2d921bef5fcd41affc779517c438e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.66
   m_Pitch: 1
   Loop: 0
   Mute: 0

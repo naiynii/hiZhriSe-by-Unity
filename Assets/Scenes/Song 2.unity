@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 0
-  noteRestriction: 7
+  noteRestriction: 11
   input1: 273
   input2: 119
   notePrefab: {fileID: 949527207523006638, guid: 195bbca4e0083204084d34246cf67a9e, type: 3}
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionNote: 3
-  noteRestriction: 4
+  noteRestriction: 8
   input1: 275
   input2: 100
   notePrefab: {fileID: 2949761833030092001, guid: b248052d5af1dc649af10a269fd7478c, type: 3}
